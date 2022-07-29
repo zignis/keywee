@@ -38,10 +38,6 @@ This module has a UMD bundle available through JSDelivr and Unpkg CDNs.
 </script>
 ```
 
-## Documentation
-
-[Auto-generated documentation](./docs/README.md).
-
 ## License
 
 Released under [MIT License](./LICENSE).
