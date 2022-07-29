@@ -1,4 +1,4 @@
-import toSnakeCase from './snake';
+import toSnakeCase from './toSnakeCase';
 
 const samples = [
   ['flatcase', 'flatcase'],

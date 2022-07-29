@@ -1,4 +1,4 @@
-import objPick from './pick';
+import objPick from './objPick';
 
 const sampleObj = {
   gender: 'male',

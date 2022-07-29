@@ -1,5 +1,5 @@
 /*!
- * keywee v1.0.1
+ * keywee v1.0.3
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -28,8 +28,8 @@
  * @property {any} [defaultValue] Default value to use for upsert.
  *
  * @param {Object} obj Source object.
- * @param {any[]} keys Array of keys to pick.
- * @param {Options} options Object pick options.
+ * @param {any[]} keys Array of keys to objPick.
+ * @param {Options} options Object objPick options.
  *
  * @returns {Object} Object with specified keys.
  */
@@ -82,7 +82,7 @@ var objPick = function (obj, keys, options) {
  * @property {Boolean} [removeEmptyObjects=false] Remove empty nested objects.
  *
  * @param {Object} obj Source object.
- * @param {Options} [options] Object sanitize options.
+ * @param {Options} [options] Object objSanitize options.
  *
  * @returns {Object} Sanitized object.
  */
@@ -115,5 +115,71 @@ var objSanitize = function (obj, options) {
     return preserveOriginal ? objToModify : obj;
 };
 
-export { objPick, objSanitize };
+/**
+ * Check if object has a specific key or an array of keys.
+ * @example
+ * ```ts
+ * const obj = {
+ *   "foo": true,
+ *   "bar": false
+ * };
+ *
+ * hasKey(obj, 'foo');
+ * => true
+ *
+ * hasKey(obj, ['foo', 'bar']);
+ * => true
+ * ```
+ * @param {Object} obj Source object.
+ * @param {any | any[]} keys The key or array of keys to check.
+ *
+ * @returns {Boolean} Result.
+ */
+var hasKey = function (obj, keys) {
+    var hasKeys = true;
+    if (Array.isArray(keys)) {
+        keys.forEach(function (key) {
+            if (!hasKey(obj, key)) {
+                hasKeys = false;
+            }
+        });
+    }
+    else {
+        if (!Object.prototype.hasOwnProperty.call(obj, keys)) {
+            hasKeys = false;
+        }
+    }
+    return hasKeys;
+};
+
+/**
+ * Converts a string to snake_case.
+ * @example
+ * ```ts
+ * toSnakeCase('camelCase');
+ *
+ * => camel_case
+ * ```
+ *
+ * @typedef {Object} Options
+ * @property {String} [separator="_"] Separator.
+ *
+ * @param {String} input Source string.
+ * @param {Options} options Snake case options.
+ *
+ * @returns {String} Snake cased string.
+ */
+var toSnakeCase = function (input, options) {
+    var separator = (options || {}).separator;
+    return input
+        .replace(/([a-z])([A-Z]+)/g, function (_, s1, s2) { return s1 + ' ' + s2; })
+        .replace(/([A-Z])([A-Z]+)([^a-zA-Z0-9]*)$/, function (_, s1, s2, s3) { return s1 + s2.toLowerCase() + s3; })
+        .replace(/([A-Z]+)([A-Z][a-z])/g, function (_, s1, s2) { return s1.toLowerCase() + ' ' + s2; })
+        .replace(/\W+/g, ' ')
+        .split(/ |\B(?=[A-Z])/)
+        .map(function (word) { return word.toLowerCase(); })
+        .join(separator || '_');
+};
+
+export { hasKey, objPick, objSanitize, toSnakeCase };
 //# sourceMappingURL=index.esm.js.map

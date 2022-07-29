@@ -33,7 +33,7 @@
  * @property {Boolean} [removeEmptyObjects=false] Remove empty nested objects.
  *
  * @param {Object} obj Source object.
- * @param {Options} [options] Object sanitize options.
+ * @param {Options} [options] Object objSanitize options.
  *
  * @returns {Object} Sanitized object.
  */

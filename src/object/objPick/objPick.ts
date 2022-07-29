@@ -22,8 +22,8 @@
  * @property {any} [defaultValue] Default value to use for upsert.
  *
  * @param {Object} obj Source object.
- * @param {any[]} keys Array of keys to pick.
- * @param {Options} options Object pick options.
+ * @param {any[]} keys Array of keys to objPick.
+ * @param {Options} options Object objPick options.
  *
  * @returns {Object} Object with specified keys.
  */

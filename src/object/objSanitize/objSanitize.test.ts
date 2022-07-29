@@ -1,4 +1,4 @@
-import objSanitize from './sanitize';
+import objSanitize from './objSanitize';
 
 const sampleObj = {
   gender: 'male',
