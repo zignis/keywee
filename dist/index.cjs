@@ -1,5 +1,5 @@
 /*!
- * keywee v1.0.4
+ * keywee v1.0.5
  * (c) HexM7
  * Released under the MIT License.
  */
