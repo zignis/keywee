@@ -1,12 +1,13 @@
 # 🥝 KeyWee
 
+![Package downloads](https://badgen.net/npm/v/keywee)
 [![Continuous Integrations](https://github.com/HexM7/keywee/actions/workflows/continuous-integrations.yaml/badge.svg?branch=main)](https://github.com/HexM7/keywee/actions/workflows/continuous-integrations.yaml)
-[![License](https://badgen.net/github/license/HexM7/keywee)](./LICENSE)
+[![License](https://badgen.net/npm/license/keywee)](./LICENSE)
 [![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/keywee)](https://bundlephobia.com/package/keywee)
 ![Package types](https://badgen.net/npm/types/keywee)
 ![Package downloads](https://badgen.net/npm/dm/keywee)
 [![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/keywee)](https://bundlephobia.com/package/keywee)
-[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/reactkeywee)](https://bundlephobia.com/package/keywee)
+[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/keywee)](https://bundlephobia.com/package/keywee)
 
 A performant utility library.
 
