@@ -21,6 +21,12 @@ npm install keywee --save
 yarn add keywee
 ```
 
+## Usage
+```js
+import * as kw from 'keywee'; // Import eveything
+import { objPick } from 'keywee'; // Supports tree-shaking
+```
+
 ### Installation from CDN
 
 This module has a UMD bundle available through JSDelivr and Unpkg CDNs.
