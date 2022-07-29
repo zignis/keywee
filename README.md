@@ -40,4 +40,4 @@ This module has a UMD bundle available through JSDelivr and Unpkg CDNs.
 
 ## License
 
-Released under [MIT License](./LICENSE).
+Package released under [MIT License](./LICENSE).
