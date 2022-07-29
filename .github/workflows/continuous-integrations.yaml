@@ -42,18 +42,3 @@ jobs:
 
       - name: 'Execute the build script'
         run: 'npm run build'
-
-  publish:
-    name: 'Release the package on NPM'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 12
-      - run: npm install
-      - run: npm test
-      - run: npm build
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
