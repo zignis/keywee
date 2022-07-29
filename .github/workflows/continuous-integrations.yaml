@@ -43,13 +43,15 @@ jobs:
       - name: 'Execute the build script'
         run: 'npm run build'
 
-  releaser:
+  publish:
     name: 'Release the package on NPM'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: mmarchini-oss/npm-otp-publish@v0
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          npm_token: ${{ secrets.NPM_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_actor: ${{ github.actor }}
+          node-version: 10
+      - run: npm install
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
