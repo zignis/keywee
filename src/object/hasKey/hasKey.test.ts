@@ -2,7 +2,7 @@ import hasKey from './hasKey';
 
 describe('unit: hasKey', () => {
   it('checks for a valid key', () => {
-    expect(hasKey({ foo: true, bar: false }, 'foo')).toBeTruthy();
+    expect(hasKey({ bar: false, foo: true }, 'foo')).toBeTruthy();
   });
 
   it('checks for valid keys', () => {

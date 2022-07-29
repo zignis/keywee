@@ -41,13 +41,13 @@
 const objSanitize = <Type extends Record<any, any>>(
   obj: Type,
   options?: {
-    validate?: (value: typeof obj[keyof typeof obj]) => boolean;
     preserveOriginal?: boolean;
-    removeEmptyStrings?: boolean;
     removeEmptyObjects?: boolean;
+    removeEmptyStrings?: boolean;
+    validate?: (value: typeof obj[keyof typeof obj]) => boolean;
   },
 ): Partial<Type> => {
-  const { validate, preserveOriginal, removeEmptyStrings, removeEmptyObjects } =
+  const { preserveOriginal, removeEmptyObjects, removeEmptyStrings, validate } =
     options || {};
   const objToModify: Type = obj;
 

@@ -1,32 +1,32 @@
 import objSanitize from './objSanitize';
 
 const sampleObj = {
+  dob: { age: undefined, date: '1972-04-18T14:50:40.152Z' },
   gender: 'male',
-  name: { title: 'Mr', first: 'Zachary', last: undefined },
   location: {
-    street: { number: null, name: 'Concession Road 23' },
-    state: '',
     country: 'Canada',
+    state: '',
+    street: { name: 'Concession Road 23', number: null },
   },
-  dob: { date: '1972-04-18T14:50:40.152Z', age: undefined },
-  registered: { date: '2017-11-02T20:15:10.481Z', age: 4 },
-  phone: '',
+  name: { first: 'Zachary', last: undefined, title: 'Mr' },
   nat: null,
+  phone: '',
+  registered: { age: 4, date: '2017-11-02T20:15:10.481Z' },
 };
 
 describe('unit: objSanitize', () => {
   it('sanitizes an object', () => {
     expect(objSanitize(sampleObj)).toEqual({
-      gender: 'male',
-      name: { title: 'Mr', first: 'Zachary' },
-      location: {
-        street: { name: 'Concession Road 23' },
-        state: '',
-        country: 'Canada',
-      },
       dob: { date: '1972-04-18T14:50:40.152Z' },
-      registered: { date: '2017-11-02T20:15:10.481Z', age: 4 },
+      gender: 'male',
+      location: {
+        country: 'Canada',
+        state: '',
+        street: { name: 'Concession Road 23' },
+      },
+      name: { first: 'Zachary', title: 'Mr' },
       phone: '',
+      registered: { age: 4, date: '2017-11-02T20:15:10.481Z' },
     });
   });
 
@@ -36,11 +36,11 @@ describe('unit: objSanitize', () => {
         validate: (value) => typeof value !== 'string',
       }),
     ).toEqual({
-      name: {},
+      dob: {},
       location: {
         street: {},
       },
-      dob: {},
+      name: {},
       registered: {
         age: 4,
       },
@@ -51,9 +51,9 @@ describe('unit: objSanitize', () => {
     expect(
       objSanitize(
         {
-          foo: true,
           bar: '',
           baz: ' ',
+          foo: true,
         },
         { removeEmptyStrings: true },
       ),
@@ -66,8 +66,8 @@ describe('unit: objSanitize', () => {
     expect(
       objSanitize(
         {
-          foo: true,
           bar: {},
+          foo: true,
         },
         { removeEmptyObjects: true },
       ),

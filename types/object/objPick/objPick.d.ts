@@ -28,8 +28,8 @@
  * @returns {Object} Object with specified keys.
  */
 declare const objPick: <Type extends Record<any, any>, Key extends keyof Type>(obj: Type, keys: Key[] | string[], options?: {
-    upsert?: boolean;
     defaultValue?: any;
+    upsert?: boolean;
 } | undefined) => Record<string | Key, Type[keyof Type]>;
 export default objPick;
 //# sourceMappingURL=objPick.d.ts.map

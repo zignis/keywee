@@ -38,10 +38,10 @@
  * @returns {Object} Sanitized object.
  */
 declare const objSanitize: <Type extends Record<any, any>>(obj: Type, options?: {
-    validate?: (value: Type[keyof Type]) => boolean;
     preserveOriginal?: boolean;
-    removeEmptyStrings?: boolean;
     removeEmptyObjects?: boolean;
+    removeEmptyStrings?: boolean;
+    validate?: (value: Type[keyof Type]) => boolean;
 } | undefined) => Partial<Type>;
 export default objSanitize;
 //# sourceMappingURL=objSanitize.d.ts.map
