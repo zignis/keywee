@@ -1,5 +1,5 @@
 /*!
- * keywee v1.2.0
+ * keywee v1.2.1
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -110,11 +110,13 @@ var arrUnion = function (arr, relArr) {
 var hasKey = function (obj, keys) {
     var hasKeys = true;
     if (Array.isArray(keys)) {
-        keys.forEach(function (key) {
-            if (!hasKey(obj, key)) {
+        var i = keys.length;
+        while (i--) {
+            if (!hasKey(obj, keys[i])) {
                 hasKeys = false;
+                break;
             }
-        });
+        }
     }
     else {
         if (!Object.prototype.hasOwnProperty.call(obj, keys)) {
@@ -125,35 +127,50 @@ var hasKey = function (obj, keys) {
 };
 
 /**
- * Deletes a key or an arrays of keys from an object.
+ * Deletes a key, an arrays of keys or all keys from an object.
  * @example
  * ```ts
  * const obj = {
  *   "foo": true,
- *   "bar": false
+ *   "bar": false,
+ *   "one": 2
  * };
  *
  * objFlush(obj, 'foo');
  * =>
  * {
  *   "bar": false,
+ *   "one": 2
  * }
  *
  * objFlush(obj, ['foo', 'bar']);
+ * => {
+ *   "one": 2
+ * }
+ *
+ * objFlush(obj);
  * => {}
  * ```
  * @param {Object} obj Source object.
- * @param {any | any[]} keys The key or array of keys to remove.
+ * @param {any | any[]} [keys] The key or an array of keys to remove.
  *
- * @returns {Boolean} Result object.
+ * @returns {Boolean} Resultant object.
  */
 var objFlush = function (obj, keys) {
-    if (Array.isArray(keys)) {
-        keys.forEach(function (key) {
+    if (!keys) {
+        for (var key in obj) {
             if (hasKey(obj, key)) {
                 delete obj[key];
             }
-        });
+        }
+    }
+    else if (Array.isArray(keys)) {
+        var i = keys.length;
+        while (i--) {
+            if (hasKey(obj, keys[i])) {
+                delete obj[keys[i]];
+            }
+        }
     }
     else if (hasKey(obj, keys)) {
         delete obj[keys];
@@ -193,14 +210,15 @@ var objFlush = function (obj, keys) {
 var objPick = function (obj, keys, options) {
     var _a = options || {}, defaultValue = _a.defaultValue, upsert = _a.upsert;
     var newObj = {};
-    keys.forEach(function (key) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) {
-            newObj[key] = obj[key];
+    var i = keys.length;
+    while (i--) {
+        if (hasKey(obj, keys[i])) {
+            newObj[keys[i]] = obj[keys[i]];
         }
         else if (upsert) {
-            newObj[key] = defaultValue || null;
+            newObj[keys[i]] = defaultValue || null;
         }
-    });
+    }
     return newObj;
 };
 
@@ -248,6 +266,8 @@ var objSanitize = function (obj, options) {
     var objToModify = obj;
     var recurse = function (object) {
         for (var key in object) {
+            if (!hasKey(object, key))
+                continue;
             var isInvalid = validate ? !validate(object[key]) : false;
             var isEmptyObject = removeEmptyObjects &&
                 object[key] &&
