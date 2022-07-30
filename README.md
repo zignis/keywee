@@ -1,13 +1,13 @@
 # 🥝 KeyWee
 
-![Package downloads](https://badgen.net/npm/v/keywee)
+[![Package version](https://badgen.net/npm/v/keywee)](https://npmjs.com/package/keywee)
 [![Continuous Integrations](https://github.com/HexM7/keywee/actions/workflows/continuous-integrations.yaml/badge.svg?branch=main)](https://github.com/HexM7/keywee/actions/workflows/continuous-integrations.yaml)
 [![License](https://badgen.net/npm/license/keywee)](./LICENSE)
-[![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/keywee)](https://bundlephobia.com/package/keywee)
+[![Package tree-shaking](https://badgen.net/bundlephobia/tree-shaking/keywee)](https://bundlephobia.com/package/keywee@latest)
 ![Package types](https://badgen.net/npm/types/keywee)
 ![Package downloads](https://badgen.net/npm/dm/keywee)
-[![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/keywee)](https://bundlephobia.com/package/keywee)
-[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/keywee)](https://bundlephobia.com/package/keywee)
+[![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/keywee)](https://bundlephobia.com/package/keywee@latest)
+[![Package dependency count](https://badgen.net/bundlephobia/dependency-count/keywee)](https://bundlephobia.com/package/keywee@latest)
 
 A performant utility library.
 
