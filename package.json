@@ -1,6 +1,6 @@
 {
   "name": "keywee",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Performant utility library",
   "cdn": "dist/index.umd.js",
   "main": "dist/index.js",
@@ -41,8 +41,8 @@
   },
   "scripts": {
     "clean": "rimraf dist types coverage",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test": "jest --coverage",
+    "test:no-coverage": "jest",
     "lint": "eslint \"*/**/*.{ts,js,json}\"",
     "lint:fix": "eslint \"*/**/*.{ts,js,json}\" --fix",
     "build": "rollup --config ./rollup.config.js",
