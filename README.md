@@ -46,10 +46,6 @@ This module has a UMD bundle available through JSDelivr and Unpkg CDNs.
 </script>
 ```
 
-## Test coverage
-
-[View test coverage](./coverage/Icov-report/index.html).
-
 ## License
 
 Package released under [MIT License](./LICENSE).
