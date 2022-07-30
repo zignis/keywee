@@ -25,7 +25,7 @@ const hasKey = <Type extends Record<any, any>, Key extends keyof Type>(
   let hasKeys = true;
 
   if (Array.isArray(keys)) {
-    let i = keys.length;
+    var i = keys.length;
     while (i--) {
       if (!hasKey(obj, keys[i] as Key)) {
         hasKeys = false;

@@ -26,6 +26,7 @@ const options = {
   root: true,
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
+    'no-var': 'off',
     'sort-imports': 'off',
     'sort-keys': 'off',
     'sort/destructuring-properties': 'error',

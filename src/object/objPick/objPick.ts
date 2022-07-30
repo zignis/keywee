@@ -40,7 +40,7 @@ const objPick = <Type extends Record<any, any>, Key extends keyof Type>(
   const { defaultValue, upsert } = options || {};
   const newObj: Record<any, any> = {};
 
-  let i = keys.length;
+  var i = keys.length;
   while (i--) {
     if (hasKey(obj, keys[i])) {
       newObj[keys[i]] = obj[keys[i]];

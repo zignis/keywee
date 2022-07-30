@@ -35,7 +35,7 @@ import { hasKey } from '../hasKey';
  * @property {Boolean} [removeEmptyObjects=false] Remove empty nested objects.
  *
  * @param {Object} obj Source object.
- * @param {Options} [options] Object objSanitize options.
+ * @param {Options} [options] Object sanitize options.
  *
  * @returns {Object} Sanitized object.
  */

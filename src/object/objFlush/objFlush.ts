@@ -41,7 +41,7 @@ const objFlush = <Type extends Record<any, any>, Key extends keyof Type>(
       }
     }
   } else if (Array.isArray(keys)) {
-    let i = keys.length;
+    var i = keys.length;
     while (i--) {
       if (hasKey(obj, keys[i])) {
         delete obj[keys[i]];

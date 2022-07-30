@@ -3,4 +3,5 @@ export * from './objFlush';
 export * from './objKeys';
 export * from './objPick';
 export * from './objSanitize';
+export * from './objSort';
 export * from './objValues';
