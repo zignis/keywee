@@ -1,4 +1,4 @@
-import toSnakeCase from './toSnakeCase';
+import snakeCase from './snakeCase';
 
 const samples = [
   ['flatcase', 'flatcase'],
@@ -8,8 +8,8 @@ const samples = [
   ['PascalCase', 'pascal_case'],
 ];
 
-describe('unit: toSnakeCase', () => {
+describe('unit: snakeCase', () => {
   test.each(samples)('snake_case: %s -> %s', (fixture, result) =>
-    expect(toSnakeCase(fixture)).toBe(result),
+    expect(snakeCase(fixture)).toBe(result),
   );
 });

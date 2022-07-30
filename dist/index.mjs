@@ -1,5 +1,5 @@
 /*!
- * keywee v1.0.5
+ * keywee v1.1.0
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -81,35 +81,6 @@ function __spreadArray(to, from, pack) {
  */
 var arrUnion = function (arr, relArr) {
     return __spreadArray(__spreadArray([], arr, true), arrDiff(relArr, arr), true);
-};
-
-/**
- * Converts a string to snake_case.
- * @example
- * ```ts
- * toSnakeCase('camelCase');
- *
- * => camel_case
- * ```
- *
- * @typedef {Object} Options
- * @property {String} [separator="_"] Separator.
- *
- * @param {String} input Source string.
- * @param {Options} options Snake case options.
- *
- * @returns {String} Snake cased string.
- */
-var toSnakeCase = function (input, options) {
-    var separator = (options || {}).separator;
-    return input
-        .replace(/([a-z])([A-Z]+)/g, function (_, s1, s2) { return s1 + ' ' + s2; })
-        .replace(/([A-Z])([A-Z]+)([^a-zA-Z0-9]*)$/, function (_, s1, s2, s3) { return s1 + s2.toLowerCase() + s3; })
-        .replace(/([A-Z]+)([A-Z][a-z])/g, function (_, s1, s2) { return s1.toLowerCase() + ' ' + s2; })
-        .replace(/\W+/g, ' ')
-        .split(/ |\B(?=[A-Z])/)
-        .map(function (word) { return word.toLowerCase(); })
-        .join(separator || '_');
 };
 
 /**
@@ -297,5 +268,30 @@ var objSanitize = function (obj, options) {
     return preserveOriginal ? objToModify : obj;
 };
 
-export { arrCross, arrDiff, arrUnion, hasKey, objFlush, objPick, objSanitize, toSnakeCase };
+/**
+ * Converts a string to snake_case.
+ * @example
+ * ```ts
+ * snakeCase('camelCase');
+ *
+ * => camel_case
+ * ```
+ *
+ * @typedef {Object} Options
+ * @property {String} [separator="_"] Separator.
+ *
+ * @param {String} input Source string.
+ * @param {Options} options Snake case options.
+ *
+ * @returns {String} Snake cased string.
+ */
+var snakeCase = function (input, options) {
+    var separator = (options || {}).separator;
+    var match = input.match(/[A-Z]{2,}(?=[A-Z][a-z]+\d*|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/g);
+    return match
+        ? match.map(function (chunk) { return chunk.toLowerCase(); }).join(separator || '_')
+        : input;
+};
+
+export { arrCross, arrDiff, arrUnion, hasKey, objFlush, objPick, objSanitize, snakeCase };
 //# sourceMappingURL=index.mjs.map
