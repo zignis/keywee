@@ -179,6 +179,32 @@ var objFlush = function (obj, keys) {
 };
 
 /**
+ * Returns an array of keys of an object.
+ * @example
+ * ```ts
+ * const obj = {
+ *   "foo": true,
+ *   "bar": false,
+ * };
+ *
+ * objKeys(obj);
+ * => ['foo', 'bar']
+ * ```
+ * @param {Object} obj Source object.
+ *
+ * @returns {Array} Keys of the object.
+ */
+var objKeys = function (obj) {
+    var keys = [];
+    for (var key in obj) {
+        if (hasKey(obj, key)) {
+            keys.push(key);
+        }
+    }
+    return keys;
+};
+
+/**
  * Pick specific keys from an object.
  * @example
  * ```ts
@@ -293,6 +319,32 @@ var objSanitize = function (obj, options) {
 };
 
 /**
+ * Returns an array of values of an object.
+ * @example
+ * ```ts
+ * const obj = {
+ *   "foo": true,
+ *   "bar": false,
+ * };
+ *
+ * objValues(obj);
+ * => [true, false]
+ * ```
+ * @param {Object} obj Source object.
+ *
+ * @returns {Array} Values of the object.
+ */
+var objValues = function (obj) {
+    var values = [];
+    for (var key in obj) {
+        if (hasKey(obj, key)) {
+            values.push(obj[key]);
+        }
+    }
+    return values;
+};
+
+/**
  * Converts a string to snake_case.
  * @example
  * ```ts
@@ -322,7 +374,9 @@ exports.arrDiff = arrDiff;
 exports.arrUnion = arrUnion;
 exports.hasKey = hasKey;
 exports.objFlush = objFlush;
+exports.objKeys = objKeys;
 exports.objPick = objPick;
 exports.objSanitize = objSanitize;
+exports.objValues = objValues;
 exports.snakeCase = snakeCase;
 //# sourceMappingURL=index.cjs.map
