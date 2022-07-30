@@ -12,4 +12,8 @@ describe('unit: objFlush', () => {
       baz: 'one',
     });
   });
+
+  it('removes all keys from an object', () => {
+    expect(objFlush({ bar: false, foo: true })).toEqual({});
+  });
 });

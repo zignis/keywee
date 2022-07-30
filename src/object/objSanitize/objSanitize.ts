@@ -1,3 +1,5 @@
+import { hasKey } from '../hasKey';
+
 /**
  * Sanitize an object.
  * @example
@@ -37,7 +39,6 @@
  *
  * @returns {Object} Sanitized object.
  */
-
 const objSanitize = <Type extends Record<any, any>>(
   obj: Type,
   options?: {
@@ -53,6 +54,8 @@ const objSanitize = <Type extends Record<any, any>>(
 
   const recurse = (object: Record<any, any>): any => {
     for (const key in object) {
+      if (!hasKey(object, key)) continue;
+
       const isInvalid = validate ? !validate(object[key]) : false;
 
       const isEmptyObject =

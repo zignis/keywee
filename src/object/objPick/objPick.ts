@@ -1,3 +1,5 @@
+import { hasKey } from '../hasKey';
+
 /**
  * Pick specific keys from an object.
  * @example
@@ -38,13 +40,14 @@ const objPick = <Type extends Record<any, any>, Key extends keyof Type>(
   const { defaultValue, upsert } = options || {};
   const newObj: Record<any, any> = {};
 
-  keys.forEach((key) => {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      newObj[key] = obj[key];
+  let i = keys.length;
+  while (i--) {
+    if (hasKey(obj, keys[i])) {
+      newObj[keys[i]] = obj[keys[i]];
     } else if (upsert) {
-      newObj[key] = defaultValue || null;
+      newObj[keys[i]] = defaultValue || null;
     }
-  });
+  }
 
   return newObj;
 };

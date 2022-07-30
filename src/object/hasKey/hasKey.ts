@@ -25,11 +25,13 @@ const hasKey = <Type extends Record<any, any>, Key extends keyof Type>(
   let hasKeys = true;
 
   if (Array.isArray(keys)) {
-    keys.forEach((key) => {
-      if (!hasKey(obj, key)) {
+    let i = keys.length;
+    while (i--) {
+      if (!hasKey(obj, keys[i] as Key)) {
         hasKeys = false;
+        break;
       }
-    });
+    }
   } else {
     if (!Object.prototype.hasOwnProperty.call(obj, keys)) {
       hasKeys = false;
