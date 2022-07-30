@@ -9,6 +9,8 @@
 [![Package minified & gzipped size](https://badgen.net/bundlephobia/minzip/keywee)](https://bundlephobia.com/package/keywee@latest)
 [![Package dependency count](https://badgen.net/bundlephobia/dependency-count/keywee)](https://bundlephobia.com/package/keywee@latest)
 
+![Banner](./assets/banner.svg)
+
 A performant utility library.
 
 ## Installation
