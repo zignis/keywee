@@ -23,5 +23,5 @@ pnpmfile.js
 *.log
 *.log.*
 
-# Editor
+# Other
 .idea/
