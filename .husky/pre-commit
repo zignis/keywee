@@ -2,5 +2,6 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npm run clean
+npm run install
 npm run lint:fix
 npm run build
