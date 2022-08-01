@@ -1,0 +1,1 @@
+{"version":3,"file":"arrMap.d.ts","sourceRoot":"","sources":["../../../src/array/arrMap/arrMap.ts"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;GAeG;AACH,MAAM,CAAC,OAAO,UAAU,MAAM,CAC5B,GAAG,EAAE,GAAG,EAAE,EACV,IAAI,EAAE,CAAC,OAAO,EAAE,OAAO,GAAG,CAAC,GAAG,CAAC,EAAE,KAAK,EAAE,MAAM,EAAE,KAAK,EAAE,OAAO,GAAG,KAAK,GAAG,EACzE,OAAO,CAAC,EAAE,GAAG,GACZ,OAAO,CAAC,OAAO,GAAG,CAAC,CAQrB"}
