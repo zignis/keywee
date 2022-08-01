@@ -14,15 +14,15 @@
  * => true
  * ```
  * @param {Object} obj Source object.
- * @param {any | any[]} keys The key or array of keys to check.
+ * @param {any|any[]} keys The key or array of keys to check.
  *
  * @returns {Boolean} Result.
  */
-const hasKey = <Type extends Record<any, any>, Key extends keyof Type>(
-  obj: Type,
-  keys: Key | Key[],
-): boolean => {
-  let hasKeys = true;
+export default function hasKey<
+  Type extends Record<any, any>,
+  Key extends keyof Type,
+>(obj: Type, keys: Key | Key[]): boolean {
+  var hasKeys = true;
 
   if (Array.isArray(keys)) {
     var i = keys.length;
@@ -39,6 +39,4 @@ const hasKey = <Type extends Record<any, any>, Key extends keyof Type>(
   }
 
   return hasKeys;
-};
-
-export default hasKey;
+}

@@ -1,3 +1,4 @@
+import { strTrim } from '../../string';
 import { hasKey } from '../hasKey';
 
 /**
@@ -27,7 +28,6 @@ import { hasKey } from '../hasKey';
  *   "foo": 1
  * }
  * ```
- *
  * @typedef {Object} Options
  * @property {Function} [validate] Custom validator function.
  * @property {Boolean} [preserveOriginal=false] Preserve the original object.
@@ -39,7 +39,7 @@ import { hasKey } from '../hasKey';
  *
  * @returns {Object} Sanitized object.
  */
-const objSanitize = <Type extends Record<any, any>>(
+export default function objSanitize<Type extends Record<any, any>>(
   obj: Type,
   options?: {
     preserveOriginal?: boolean;
@@ -47,27 +47,29 @@ const objSanitize = <Type extends Record<any, any>>(
     removeEmptyStrings?: boolean;
     validate?: (value: typeof obj[keyof typeof obj]) => boolean;
   },
-): Partial<Type> => {
-  const { preserveOriginal, removeEmptyObjects, removeEmptyStrings, validate } =
-    options || {};
-  const objToModify: Type = obj;
+): Partial<Type> {
+  var preserveOriginal = (options || {}).preserveOriginal;
+  var removeEmptyObjects = (options || {}).removeEmptyObjects;
+  var removeEmptyStrings = (options || {}).removeEmptyStrings;
+  var validate = (options || {}).validate;
+  var objToModify: Type = obj;
 
-  const recurse = (object: Record<any, any>): any => {
-    for (const key in object) {
+  function recurse(object: Record<any, any>): any {
+    for (var key in object) {
       if (!hasKey(object, key)) continue;
 
-      const isInvalid = validate ? !validate(object[key]) : false;
+      var isInvalid = validate ? !validate(object[key]) : false;
 
-      const isEmptyObject =
+      var isEmptyObject =
         removeEmptyObjects &&
         object[key] &&
         typeof object[key] === 'object' &&
         Object.keys(object[key]).length === 0;
 
-      const isEmptyStr =
+      var isEmptyStr =
         removeEmptyStrings &&
         typeof object[key] === 'string' &&
-        !object[key].trim();
+        !strTrim(object[key]);
 
       if (
         object[key] === null ||
@@ -81,11 +83,9 @@ const objSanitize = <Type extends Record<any, any>>(
         recurse(object[key]);
       }
     }
-  };
+  }
 
   recurse(preserveOriginal ? objToModify : obj);
 
   return preserveOriginal ? objToModify : obj;
-};
-
-export default objSanitize;
+}

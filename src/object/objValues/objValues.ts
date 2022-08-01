@@ -16,22 +16,18 @@ import { hasKey } from '../hasKey';
  *
  * @returns {Array} Values of the object.
  */
-const objValues = <
+export default function objValues<
   Type extends Record<any, any>,
   Key extends keyof Type,
   Value extends Type[Key],
->(
-  obj: Type,
-): Value[] => {
-  const values: Value[] = [];
+>(obj: Type): Value[] {
+  var values: Value[] = [];
 
-  for (const key in obj) {
+  for (var key in obj) {
     if (hasKey(obj, key)) {
       values.push(obj[key]);
     }
   }
 
   return values;
-};
-
-export default objValues;
+}

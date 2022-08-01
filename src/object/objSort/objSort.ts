@@ -27,15 +27,15 @@ import { objKeys } from '../objKeys';
  *
  * @returns {Object} Object with sorted keys.
  */
-const objSort = <Type extends Record<any, any>>(
+export default function objSort<Type extends Record<any, any>>(
   obj: Type,
   options?: {
     reverse?: boolean;
   },
-): Type => {
-  const { reverse } = options || {};
-  const newObj: Type = obj;
-  const keys = objKeys(obj);
+): Type {
+  var reverse = (options || {}).reverse;
+  var newObj: Type = obj;
+  var keys = objKeys(obj);
 
   if (reverse) {
     keys.reverse();
@@ -49,6 +49,4 @@ const objSort = <Type extends Record<any, any>>(
   }
 
   return newObj;
-};
-
-export default objSort;
+}

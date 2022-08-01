@@ -29,16 +29,20 @@ import { hasKey } from '../hasKey';
  *
  * @returns {Object} Object with specified keys.
  */
-const objPick = <Type extends Record<any, any>, Key extends keyof Type>(
+export default function objPick<
+  Type extends Record<any, any>,
+  Key extends keyof Type,
+>(
   obj: Type,
   keys: Key[] | string[],
   options?: {
     defaultValue?: any;
     upsert?: boolean;
   },
-): Record<typeof keys[any], typeof obj[keyof typeof obj]> => {
-  const { defaultValue, upsert } = options || {};
-  const newObj: Record<any, any> = {};
+): Record<typeof keys[any], typeof obj[keyof typeof obj]> {
+  var defaultValue = (options || {}).defaultValue;
+  var upsert = (options || {}).upsert;
+  var newObj: Record<any, any> = {};
 
   var i = keys.length;
   while (i--) {
@@ -50,6 +54,4 @@ const objPick = <Type extends Record<any, any>, Key extends keyof Type>(
   }
 
   return newObj;
-};
-
-export default objPick;
+}

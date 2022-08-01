@@ -26,16 +26,16 @@ import { hasKey } from '../hasKey';
  * => {}
  * ```
  * @param {Object} obj Source object.
- * @param {any | any[]} [keys] The key or an array of keys to remove.
+ * @param {any|any[]} [keys] The key or an array of keys to remove.
  *
  * @returns {Boolean} Resultant object.
  */
-const objFlush = <Type extends Record<any, any>, Key extends keyof Type>(
-  obj: Type,
-  keys?: Key | Key[],
-): Partial<Type> => {
+export default function objFlush<
+  Type extends Record<any, any>,
+  Key extends keyof Type,
+>(obj: Type, keys?: Key | Key[]): Partial<Type> {
   if (!keys) {
-    for (const key in obj) {
+    for (var key in obj) {
       if (hasKey(obj, key)) {
         delete obj[key];
       }
@@ -52,6 +52,4 @@ const objFlush = <Type extends Record<any, any>, Key extends keyof Type>(
   }
 
   return obj;
-};
-
-export default objFlush;
+}

@@ -1,3 +1,6 @@
+import { arrFilter } from '../arrFilter';
+import { arrIndex } from '../arrIndex';
+
 /**
  * Returns common elements from the both the arrays.
  * @example
@@ -12,8 +15,8 @@
  *
  * @returns {Array} Intersecting elements of the arrays.
  */
-const arrCross = (arr: any[], relArr: any[]): any[] => {
-  return arr.filter((value) => relArr.indexOf(value) !== -1);
-};
-
-export default arrCross;
+export default function arrCross(arr: any[], relArr: any[]): any[] {
+  return arrFilter(arr, function (element) {
+    return arrIndex(relArr, element) !== -1;
+  });
+}

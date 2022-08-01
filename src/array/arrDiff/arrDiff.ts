@@ -1,3 +1,6 @@
+import { arrFilter } from '../arrFilter';
+import { arrIndex } from '../arrIndex';
+
 /**
  * Returns distinct elements from the first array that are not present in the second array.
  * @example
@@ -12,8 +15,8 @@
  *
  * @returns {Array} Distinct elements from the first array that are not present in the second array.
  */
-const arrDiff = (arr: any[], relArr: any[]): any[] => {
-  return arr.filter((value) => relArr.indexOf(value) === -1);
-};
-
-export default arrDiff;
+export default function arrDiff(arr: any[], relArr: any[]): any[] {
+  return arrFilter(arr, function (element) {
+    return arrIndex(relArr, element) === -1;
+  });
+}

@@ -8,14 +8,11 @@ import { arrDiff } from '../arrDiff';
  *
  * => [1, 2, 3, 4, 5, 7]
  * ```
- *
  * @param {Array} arr An array.
  * @param {Array} relArr Another array.
  *
  * @returns {Array} Union of both the arrays.
  */
-const arrUnion = (arr: any[], relArr: any[]): any[] => {
-  return [...arr, ...arrDiff(relArr, arr)];
-};
-
-export default arrUnion;
+export default function arrUnion(arr: any[], relArr: any[]): any[] {
+  return arr.concat(arrDiff(relArr, arr));
+}
