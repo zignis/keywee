@@ -1,5 +1,6 @@
 import { strTrim } from '../../string';
 import { hasKey } from '../hasKey';
+import { objKeys } from '../objKeys';
 
 /**
  * Sanitize an object.
@@ -64,7 +65,7 @@ export default function objSanitize<Type extends Record<any, any>>(
         removeEmptyObjects &&
         object[key] &&
         typeof object[key] === 'object' &&
-        Object.keys(object[key]).length === 0;
+        objKeys(object[key]).length === 0;
 
       var isEmptyStr =
         removeEmptyStrings &&
