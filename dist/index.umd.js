@@ -1,5 +1,5 @@
 /*!
- * keywee v1.3.1
+ * keywee v1.3.2
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -477,7 +477,7 @@
               var isEmptyObject = removeEmptyObjects &&
                   object[key] &&
                   typeof object[key] === 'object' &&
-                  Object.keys(object[key]).length === 0;
+                  objKeys(object[key]).length === 0;
               var isEmptyStr = removeEmptyStrings &&
                   typeof object[key] === 'string' &&
                   !strTrim(object[key]);
