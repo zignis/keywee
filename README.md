@@ -6,6 +6,9 @@
     <img alt="Package version" src="https://badgen.net/npm/v/keywee" />
   </a>
   <img alt="Package downloads" src="https://badgen.net/npm/dm/keywee" />
+  <a href="https://www.jsdelivr.com/package/npm/keywee" target="_blank">
+    <img alt="JSDelivr Hits" src="https://data.jsdelivr.com/v1/package/npm/keywee/badge" />
+  </a>
   <a href="./LICENSE">
     <img alt="Package license" src="https://badgen.net/npm/license/keywee" />
   </a>
