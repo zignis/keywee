@@ -1,5 +1,5 @@
 /*!
- * keywee v1.3.2
+ * keywee v1.4.0
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -102,6 +102,28 @@ function arrDiff(arr, relArr) {
     return arrFilter(arr, function (element) {
         return arrIndex(relArr, element) === -1;
     });
+}
+
+/**
+ * Removes elements from an array.
+ * @example
+ * ```ts
+ * arrEject([1, 2, 3, 4], 2);
+ *
+ * => [1, 3, 4]
+ * ```
+ *
+ * @param {Array} arr An array.
+ * @param {any} elem Element to remove from the array.
+ *
+ * @returns {Array} Array with ejected elements.
+ */
+function arrEject(arr, elem) {
+    var index = arrIndex(arr, elem);
+    if (index > -1) {
+        arr.splice(index, 1);
+    }
+    return arr;
 }
 
 /**
@@ -561,5 +583,5 @@ function objValues(obj) {
     return values;
 }
 
-export { arrCross, arrDiff, arrFilter, arrIndex, arrMap, arrUnion, hasKey, objDiff, objEqual, objFlush, objKeys, objPick, objSanitize, objSort, objValues, snakeCase, strTrim };
+export { arrCross, arrDiff, arrEject, arrFilter, arrIndex, arrMap, arrUnion, hasKey, objDiff, objEqual, objFlush, objKeys, objPick, objSanitize, objSort, objValues, snakeCase, strTrim };
 //# sourceMappingURL=index.mjs.map
