@@ -17,7 +17,7 @@ var options = {
   ],
   overrides: [
     {
-      files: ['**/*.+(spec|test).{ts,tsx,js,jsx}'],
+      files: ['**/*.+(spec|test).{ts,tsx,js,jsx}', '!src/**'],
       rules: {
         'no-restricted-syntax': ['off'],
       },
