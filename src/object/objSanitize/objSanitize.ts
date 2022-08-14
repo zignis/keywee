@@ -5,7 +5,7 @@ import { objKeys } from '../objKeys';
 /**
  * Sanitize an object.
  * @example
- * ```ts
+ *
  * objSanitize({
  *   "1": null,
  *   "2": "two",
@@ -28,7 +28,7 @@ import { objKeys } from '../objKeys';
  * {
  *   "foo": 1
  * }
- * ```
+ *
  * @typedef {Object} Options
  * @property {Function} [validate] Custom validator function.
  * @property {Boolean} [preserveOriginal=false] Preserve the original object.

@@ -3,7 +3,7 @@ import { hasKey } from '../hasKey';
 /**
  * Pick specific keys from an object.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "one": true,
  *   "two": false,
@@ -17,7 +17,7 @@ import { hasKey } from '../hasKey';
  *   "two": false,
  *   "foo": "bar"
  * }
- * ```
+ *
  *
  * @typedef {Object} Options
  * @property {Boolean} [upsert=false] Create new properties for missing keys.

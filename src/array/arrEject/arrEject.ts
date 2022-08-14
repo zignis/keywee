@@ -3,11 +3,11 @@ import { arrIndex } from '../arrIndex';
 /**
  * Removes elements from an array.
  * @example
- * ```ts
+ *
  * arrEject([1, 2, 3, 4], 2);
  *
  * => [1, 3, 4]
- * ```
+ *
  *
  * @param {Array} arr An array.
  * @param {any} elem Element to remove from the array.

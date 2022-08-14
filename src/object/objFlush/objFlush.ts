@@ -3,7 +3,7 @@ import { hasKey } from '../hasKey';
 /**
  * Deletes a key, an arrays of keys or all keys from an object.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "foo": true,
  *   "bar": false,
@@ -24,7 +24,7 @@ import { hasKey } from '../hasKey';
  *
  * objFlush(obj);
  * => {}
- * ```
+ *
  * @param {Object} obj Source object.
  * @param {any|any[]} [keys] The key or an array of keys to remove.
  *

@@ -3,13 +3,13 @@ import { objKeys } from '../objKeys';
 /**
  * Compares two objects for equality.
  * @example
- * ```ts
+ *
  * objEqual({ foo: 1, bar: 2 }, { foo: 1, bar: 2 });
  * => true
  *
  * objEqual({ foo: 1, bar: 2 }, { foo: 1, bar: false });
  * => false
- * ```
+ *
  * @param {Object} obj First object.
  * @param {Object} relObj Second object.
  *

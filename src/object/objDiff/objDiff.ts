@@ -5,13 +5,13 @@ import { objKeys } from '../objKeys';
 /**
  * Returns an array of similar keys having different values along the two given objects.
  * @example
- * ```ts
+ *
  * objDiff({ foo: 1, bar: 2 }, { foo: true, bar: 2 });
  * => ['foo']
  *
  * objDiff({ foo: 1, bar: 2 }, { foo: 1, bar: 2 });
  * => false
- * ```
+ *
  * @param {Object} obj First object.
  * @param {Object} relObj Second object.
  *

@@ -3,7 +3,7 @@ import { objKeys } from '../objKeys';
 /**
  * Sorts the keys of an object alphabetically.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "c": 1,
  *   "a": 2,
@@ -18,7 +18,7 @@ import { objKeys } from '../objKeys';
  *   "b": 3,
  *   "c": 1
  * }
- * ```
+ *
  * @typedef {Object} Options
  * @property {Boolean} [reverse=false] Reverse the sort order.
  *

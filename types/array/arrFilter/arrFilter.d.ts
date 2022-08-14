@@ -1,7 +1,7 @@
 /**
  *  Returns a new array with the elements from the given array that pass the test implemented by the provided function.
  * @example
- * ```ts
+ *
  * arrFilter(
  *   [1, 2, 3, 4, 5],
  *   function(element) {
@@ -10,7 +10,7 @@
  * );
  *
  * => [2, 4]
- * ```
+ *
  * @param {Array} arr An array.
  * @param {Function} func Function that returns a boolean value.
  * @param {*} [thisArg] Value to use as `this` when executing function.

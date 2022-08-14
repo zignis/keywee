@@ -3,7 +3,7 @@ import { hasKey } from '../hasKey';
 /**
  * Returns an array of keys of an object.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "foo": true,
  *   "bar": false,
@@ -11,7 +11,7 @@ import { hasKey } from '../hasKey';
  *
  * objKeys(obj);
  * => ['foo', 'bar']
- * ```
+ *
  * @param {Object} obj Source object.
  *
  * @returns {Array} Keys of the object.

@@ -1,5 +1,5 @@
 /*!
- * keywee v1.4.0
+ * keywee v1.5.0
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -7,7 +7,7 @@
 /**
  *  Returns a new array with the elements from the given array that pass the test implemented by the provided function.
  * @example
- * ```ts
+ *
  * arrFilter(
  *   [1, 2, 3, 4, 5],
  *   function(element) {
@@ -16,7 +16,7 @@
  * );
  *
  * => [2, 4]
- * ```
+ *
  * @param {Array} arr An array.
  * @param {Function} func Function that returns a boolean value.
  * @param {*} [thisArg] Value to use as `this` when executing function.
@@ -40,16 +40,16 @@ function arrFilter(arr, func, thisArg) {
 /**
  * Returns the first index at which a given element can be found in the array, or -1 if it is not present.
  * @example
- * ```ts
+ *
  * arrIndex([1, 2, 3, 4, 5], 4);
  *
  * => 3
- * ```
+ *
  * @param {Array} arr An array.
  * @param {*} element The element to search for.
- * @param {Number} [from] The index to start the search at.
+ * @param {number} [from] The index to start the search at.
  *
- * @returns {Number} The index of the element in the array.
+ * @returns {number} The index of the element in the array.
  */
 function arrIndex(arr, element, from) {
     var len = arr.length >>> 0;
@@ -67,11 +67,11 @@ function arrIndex(arr, element, from) {
 /**
  * Returns common elements from the both the arrays.
  * @example
- * ```ts
+ *
  * arrCross([1, 2, 3, 4], [2, 3]);
  *
  * => [2, 3]
- * ```
+ *
  *
  * @param {Array} arr An array.
  * @param {Array} relArr Another array.
@@ -87,11 +87,11 @@ function arrCross(arr, relArr) {
 /**
  * Returns distinct elements from the first array that are not present in the second array.
  * @example
- * ```ts
+ *
  * arrDiff([1, 2, 3, 4], [2, 3]);
  *
  * => [1, 4]
- * ```
+ *
  *
  * @param {Array} arr An array.
  * @param {Array} relArr Another array.
@@ -107,11 +107,11 @@ function arrDiff(arr, relArr) {
 /**
  * Removes elements from an array.
  * @example
- * ```ts
+ *
  * arrEject([1, 2, 3, 4], 2);
  *
  * => [1, 3, 4]
- * ```
+ *
  *
  * @param {Array} arr An array.
  * @param {any} elem Element to remove from the array.
@@ -129,13 +129,13 @@ function arrEject(arr, elem) {
 /**
  * Creates a new array populated with the results of calling a provided function on every element in the calling array.
  * @example
- * ```ts
+ *
  * arrMap([1, 2, 3], function(element) {
  *   return element * 2;
  * });
  *
  * => [2, 4, 6]
- * ```
+ *
  * @param {Array} arr An array.
  * @param {Function} func Function that returns a value.
  * @param {*} [thisArg] Value to use as `this` when executing function.
@@ -151,13 +151,46 @@ function arrMap(arr, func, thisArg) {
 }
 
 /**
+ * Executes the callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+ * @example
+ *
+ * const result = arrReduce(
+ *   [1, 2, 3, 4],
+ *   function(previous, current) {
+ *     return previous + current;
+ *   },
+ *   0,
+ * );
+ *
+ * => 10
+ *
+ * @param {Array} arr An array.
+ * @param {Function} cb The reducer function.
+ * @param {*} [initialVal] An optional initial value.
+ *
+ * @returns {*} The collective result of reducer callback.
+ */
+function arrReduce(arr, cb, initialVal) {
+    var accumulator = initialVal;
+    for (var i = 0; i < arr.length; i++) {
+        if (accumulator !== undefined) {
+            accumulator = cb.call(undefined, accumulator, arr[i], i, arr);
+        }
+        else {
+            accumulator = arr[i];
+        }
+    }
+    return accumulator;
+}
+
+/**
  * Clones distinct elements from the second array to the first array.
  * @example
- * ```ts
+ *
  * arrUnion([1, 2, 3, 4, 5], [1, 3, 5, 7]);
  *
  * => [1, 2, 3, 4, 5, 7]
- * ```
+ *
  * @param {Array} arr An array.
  * @param {Array} relArr Another array.
  *
@@ -168,9 +201,51 @@ function arrUnion(arr, relArr) {
 }
 
 /**
+ * Returns a number whose value is bound to the given range.
+ * @example
+ *
+ * clamp(0, 64, 32);
+ * => 32
+ *
+ * @param {number} min The lower boundary of the output range.
+ * @param {number} value The base value of the output range.
+ * @param {number} max The upper boundary of the output range,
+ *
+ * @returns {number} A number in the suitable range.
+ */
+function clamp(min, value, max) {
+    return Math.min(Math.max(value, min), max);
+}
+
+/**
+ * Returns the dot product of two vectors.
+ * @example
+ *
+ * vecDot([1, 2], [3, 4]);
+ *
+ * => [4, 6]
+ *
+ * @param {Vector} vec A vector.
+ * @param {Vector} relVec Another vector.
+ *
+ * @returns {number} Dot product of both the vectors.
+ */
+function vecDot(vec, relVec) {
+    return arrReduce(arrMap(vec, function (_, index) {
+        return vec[index] * relVec[index];
+    }), function (previousValue, currentValue) {
+        return previousValue + currentValue;
+    });
+}
+
+function vecMag(vec) {
+    return Math.sqrt(vecDot(vec, vec));
+}
+
+/**
  * Check if object has a specific key or an array of keys.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "foo": true,
  *   "bar": false
@@ -181,7 +256,7 @@ function arrUnion(arr, relArr) {
  *
  * hasKey(obj, ['foo', 'bar']);
  * => true
- * ```
+ *
  * @param {Object} obj Source object.
  * @param {any|any[]} keys The key or array of keys to check.
  *
@@ -209,7 +284,7 @@ function hasKey(obj, keys) {
 /**
  * Returns an array of keys of an object.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "foo": true,
  *   "bar": false,
@@ -217,7 +292,7 @@ function hasKey(obj, keys) {
  *
  * objKeys(obj);
  * => ['foo', 'bar']
- * ```
+ *
  * @param {Object} obj Source object.
  *
  * @returns {Array} Keys of the object.
@@ -235,13 +310,13 @@ function objKeys(obj) {
 /**
  * Compares two objects for equality.
  * @example
- * ```ts
+ *
  * objEqual({ foo: 1, bar: 2 }, { foo: 1, bar: 2 });
  * => true
  *
  * objEqual({ foo: 1, bar: 2 }, { foo: 1, bar: false });
  * => false
- * ```
+ *
  * @param {Object} obj First object.
  * @param {Object} relObj Second object.
  *
@@ -275,13 +350,13 @@ function objEqual(obj, relObj) {
 /**
  * Returns an array of similar keys having different values along the two given objects.
  * @example
- * ```ts
+ *
  * objDiff({ foo: 1, bar: 2 }, { foo: true, bar: 2 });
  * => ['foo']
  *
  * objDiff({ foo: 1, bar: 2 }, { foo: 1, bar: 2 });
  * => false
- * ```
+ *
  * @param {Object} obj First object.
  * @param {Object} relObj Second object.
  *
@@ -305,7 +380,7 @@ function objDiff(obj, relObj) {
 /**
  * Deletes a key, an arrays of keys or all keys from an object.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "foo": true,
  *   "bar": false,
@@ -326,7 +401,7 @@ function objDiff(obj, relObj) {
  *
  * objFlush(obj);
  * => {}
- * ```
+ *
  * @param {Object} obj Source object.
  * @param {any|any[]} [keys] The key or an array of keys to remove.
  *
@@ -357,7 +432,7 @@ function objFlush(obj, keys) {
 /**
  * Pick specific keys from an object.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "one": true,
  *   "two": false,
@@ -371,7 +446,7 @@ function objFlush(obj, keys) {
  *   "two": false,
  *   "foo": "bar"
  * }
- * ```
+ *
  *
  * @typedef {Object} Options
  * @property {Boolean} [upsert=false] Create new properties for missing keys.
@@ -402,11 +477,11 @@ function objPick(obj, keys, options) {
 /**
  * Converts a string to snake_case.
  * @example
- * ```ts
+ *
  * snakeCase('camelCase');
  *
  * => 'camel_case'
- * ```
+ *
  * @typedef {Object} Options
  * @property {String} [separator="_"] Separator.
  *
@@ -428,11 +503,11 @@ function snakeCase(input, options) {
 /**
  * Removes whitespace from both ends of a string.
  * @example
- * ```ts
+ *
  * strTrim(' string with whitespace ');
  *
  * => 'string with whitespace'
- * ```
+ *
  * @param {String} input Source string.
  *
  * @returns {String} Trimmed string.
@@ -444,7 +519,7 @@ function strTrim(input) {
 /**
  * Sanitize an object.
  * @example
- * ```ts
+ *
  * objSanitize({
  *   "1": null,
  *   "2": "two",
@@ -467,7 +542,7 @@ function strTrim(input) {
  * {
  *   "foo": 1
  * }
- * ```
+ *
  * @typedef {Object} Options
  * @property {Function} [validate] Custom validator function.
  * @property {Boolean} [preserveOriginal=false] Preserve the original object.
@@ -516,7 +591,7 @@ function objSanitize(obj, options) {
 /**
  * Sorts the keys of an object alphabetically.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "c": 1,
  *   "a": 2,
@@ -531,7 +606,7 @@ function objSanitize(obj, options) {
  *   "b": 3,
  *   "c": 1
  * }
- * ```
+ *
  * @typedef {Object} Options
  * @property {Boolean} [reverse=false] Reverse the sort order.
  *
@@ -560,7 +635,7 @@ function objSort(obj, options) {
 /**
  * Returns an array of values of an object.
  * @example
- * ```ts
+ *
  * const obj = {
  *   "foo": true,
  *   "bar": false,
@@ -568,7 +643,7 @@ function objSort(obj, options) {
  *
  * objValues(obj);
  * => [true, false]
- * ```
+ *
  * @param {Object} obj Source object.
  *
  * @returns {Array} Values of the object.
@@ -583,5 +658,5 @@ function objValues(obj) {
     return values;
 }
 
-export { arrCross, arrDiff, arrEject, arrFilter, arrIndex, arrMap, arrUnion, hasKey, objDiff, objEqual, objFlush, objKeys, objPick, objSanitize, objSort, objValues, snakeCase, strTrim };
+export { arrCross, arrDiff, arrEject, arrFilter, arrIndex, arrMap, arrReduce, arrUnion, clamp, hasKey, objDiff, objEqual, objFlush, objKeys, objPick, objSanitize, objSort, objValues, snakeCase, strTrim, vecDot, vecMag };
 //# sourceMappingURL=index.esm.js.map
