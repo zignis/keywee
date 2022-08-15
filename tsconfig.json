@@ -20,7 +20,8 @@
     "lib": ["ES2020"],
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "types": ["jest"]
+    "types": ["jest"],
+    "jsx": "react"
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }
