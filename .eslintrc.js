@@ -4,7 +4,6 @@
 'use strict';
 
 /**
- * An object with ESLint options.
  * @type {import('eslint').Linter.Config}
  */
 var options = {
