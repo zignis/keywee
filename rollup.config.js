@@ -2,21 +2,16 @@
 
 import { terser } from 'rollup-plugin-terser';
 import typescript2 from 'rollup-plugin-typescript2';
-
 import pkg from './package.json';
 
-/**
- * Comment with library information to be appended in the generated bundles.
- */
 const banner = `/*!
- * ${pkg.name} v${pkg.version}
- * (c) ${pkg.author.name}
- * Released under the ${pkg.license} License.
+ * KeyWee v${pkg.version}
+ * (c) HexM7
+ * Released under the MIT License.
  */
 `;
 
 /**
- * Creates an output options object for Rollup.js.
  * @param {import('rollup').OutputOptions} options
  * @returns {import('rollup').OutputOptions}
  */
