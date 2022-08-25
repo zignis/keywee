@@ -35,7 +35,7 @@
 
 ```sh
 # NPM
-npm install keywee --save
+npm install keywee
 
 # Yarn
 yarn add keywee
@@ -46,7 +46,7 @@ yarn add keywee
 import * as kw from 'keywee'; // Import eveything (ES6)
 import { objPick } from 'keywee'; // Supports tree-shaking
 
-const kw = require('keywee'); // CommonJS
+const { arrEject } = require('keywee'); // CommonJS
 ```
 
 ### Installation from a CDN
