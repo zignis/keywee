@@ -1,5 +1,5 @@
 /*!
- * keywee v1.5.0
+ * KeyWee v1.6.0
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -184,6 +184,38 @@ function arrReduce(arr, cb, initialVal) {
 }
 
 /**
+ * Returns the product of all the elements in the given numeric array.
+ * @example
+ *
+ * arrProd([2, 4, 8]);
+ * => 64
+ *
+ * @param {Array} arr A numeric array.
+ * @returns {Number} The product of all the elements of the array.
+ */
+function arrProd(arr) {
+    return arrReduce(arr, function (previousValue, currentValue) {
+        return previousValue * currentValue;
+    }, 1);
+}
+
+/**
+ * Returns the sum of all the elements in the given numeric array.
+ * @example
+ *
+ * arrSum([1, 2, 3]);
+ * => 6
+ *
+ * @param {Array} arr A numeric array.
+ * @returns {Number} The sum of all the elements of the array.
+ */
+function arrSum(arr) {
+    return arrReduce(arr, function (previousValue, currentValue) {
+        return previousValue + currentValue;
+    }, 0);
+}
+
+/**
  * Clones distinct elements from the second array to the first array.
  * @example
  *
@@ -223,7 +255,7 @@ function clamp(min, value, max) {
  *
  * vecDot([1, 2], [3, 4]);
  *
- * => [4, 6]
+ * => 11
  *
  * @param {Vector} vec A vector.
  * @param {Vector} relVec Another vector.
@@ -658,5 +690,5 @@ function objValues(obj) {
     return values;
 }
 
-export { arrCross, arrDiff, arrEject, arrFilter, arrIndex, arrMap, arrReduce, arrUnion, clamp, hasKey, objDiff, objEqual, objFlush, objKeys, objPick, objSanitize, objSort, objValues, snakeCase, strTrim, vecDot, vecMag };
+export { arrCross, arrDiff, arrEject, arrFilter, arrIndex, arrMap, arrProd, arrReduce, arrSum, arrUnion, clamp, hasKey, objDiff, objEqual, objFlush, objKeys, objPick, objSanitize, objSort, objValues, snakeCase, strTrim, vecDot, vecMag };
 //# sourceMappingURL=index.esm.js.map

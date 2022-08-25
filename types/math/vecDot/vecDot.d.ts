@@ -5,7 +5,7 @@ import type { Vector } from '../types';
  *
  * vecDot([1, 2], [3, 4]);
  *
- * => [4, 6]
+ * => 11
  *
  * @param {Vector} vec A vector.
  * @param {Vector} relVec Another vector.

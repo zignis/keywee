@@ -1,5 +1,5 @@
 /*!
- * keywee v1.5.0
+ * KeyWee v1.6.0
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -190,6 +190,38 @@
   }
 
   /**
+   * Returns the product of all the elements in the given numeric array.
+   * @example
+   *
+   * arrProd([2, 4, 8]);
+   * => 64
+   *
+   * @param {Array} arr A numeric array.
+   * @returns {Number} The product of all the elements of the array.
+   */
+  function arrProd(arr) {
+      return arrReduce(arr, function (previousValue, currentValue) {
+          return previousValue * currentValue;
+      }, 1);
+  }
+
+  /**
+   * Returns the sum of all the elements in the given numeric array.
+   * @example
+   *
+   * arrSum([1, 2, 3]);
+   * => 6
+   *
+   * @param {Array} arr A numeric array.
+   * @returns {Number} The sum of all the elements of the array.
+   */
+  function arrSum(arr) {
+      return arrReduce(arr, function (previousValue, currentValue) {
+          return previousValue + currentValue;
+      }, 0);
+  }
+
+  /**
    * Clones distinct elements from the second array to the first array.
    * @example
    *
@@ -229,7 +261,7 @@
    *
    * vecDot([1, 2], [3, 4]);
    *
-   * => [4, 6]
+   * => 11
    *
    * @param {Vector} vec A vector.
    * @param {Vector} relVec Another vector.
@@ -670,7 +702,9 @@
   exports.arrFilter = arrFilter;
   exports.arrIndex = arrIndex;
   exports.arrMap = arrMap;
+  exports.arrProd = arrProd;
   exports.arrReduce = arrReduce;
+  exports.arrSum = arrSum;
   exports.arrUnion = arrUnion;
   exports.clamp = clamp;
   exports.hasKey = hasKey;
