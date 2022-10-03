@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.6.0
+ * KeyWee v1.6.1
  * (c) HexM7
  * Released under the MIT License.
  */
@@ -276,6 +276,24 @@ function vecDot(vec, relVec) {
 
 function vecMag(vec) {
     return Math.sqrt(vecDot(vec, vec));
+}
+
+/**
+ * Round a float to a fixed number for decimal points.
+ * @example
+ *
+ * toFixed(5.025, 2);
+ * => 5.02
+ *
+ * @param {number} num Source number.
+ * @param {number} digits Number of digits to round.
+ *
+ * @returns {number} Rounded float.
+ */
+function toFixed(num, digits) {
+    if (digits === void 0) { digits = 2; }
+    var power = Math.pow(10, digits);
+    return Math.round(num * power) / power;
 }
 
 /**
@@ -716,6 +734,7 @@ exports.objSort = objSort;
 exports.objValues = objValues;
 exports.snakeCase = snakeCase;
 exports.strTrim = strTrim;
+exports.toFixed = toFixed;
 exports.vecDot = vecDot;
 exports.vecMag = vecMag;
 //# sourceMappingURL=index.js.map
