@@ -7,3 +7,7 @@ npm run lint:fix
 npm run test
 npm run doc
 npm run build
+
+echo
+touch .commit
+exit
