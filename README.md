@@ -68,7 +68,7 @@ This module has a UMD bundle available through JSDelivr and Unpkg CDNs.
 
 ## Docs
 
-Available at https://hexm7.github.io/keywee.
+Available at https://zignis.github.io/keywee.
 
 ## License
 
