@@ -6,7 +6,7 @@ import pkg from './package.json';
 
 const banner = `/*!
  * KeyWee v${pkg.version}
- * (c) HexM7
+ * (c) zignis
  * Released under the MIT License.
  */
 `;
