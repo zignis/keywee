@@ -1,6 +1,6 @@
 {
   "name": "keywee",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Performant utility library",
   "cdn": "dist/index.umd.js",
   "main": "dist/index.js",
@@ -56,18 +56,18 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HexM7/keywee.git"
+    "url": "git+https://github.com/zignis/keywee.git"
   },
   "keywords": [
     "utility",
     "functional"
   ],
   "author": {
-    "name": "HexM7"
+    "name": "zignis"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HexM7/keywee/issues"
+    "url": "https://github.com/zignis/keywee/issues"
   },
-  "homepage": "https://github.com/HexM7/keywee#readme"
+  "homepage": "https://github.com/zignis/keywee#readme"
 }
