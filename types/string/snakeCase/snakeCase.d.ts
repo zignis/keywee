@@ -1,20 +1,12 @@
 /**
- * Converts a string to snake_case.
+ * Converts a string to snake_case
+ *
  * @example
- *
  * snakeCase('camelCase');
- *
  * => 'camel_case'
  *
- * @typedef {Object} Options
- * @property {String} [separator="_"] Separator.
- *
- * @param {String} input Source string.
- * @param {Options} options Snake case options.
- *
- * @returns {String} Snake cased string.
+ * @param a - A string
+ * @param separator - An optional separator to use instead of underscore
  */
-export default function snakeCase(input: string, options?: {
-    separator?: string;
-}): string;
+export declare const snakeCase: (a: string, separator?: string) => string;
 //# sourceMappingURL=snakeCase.d.ts.map

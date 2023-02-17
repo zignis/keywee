@@ -1,1 +1,1 @@
-export { default as arrDiff } from './arrDiff';
+export * from './arrDiff';

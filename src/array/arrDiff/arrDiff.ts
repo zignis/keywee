@@ -1,22 +1,14 @@
-import { arrFilter } from '../arrFilter';
-import { arrIndex } from '../arrIndex';
-
 /**
- * Returns distinct elements from the first array that are not present in the second array.
+ * Returns elements from the first array that are not present in the second array
+ *
  * @example
- *
  * arrDiff([1, 2, 3, 4], [2, 3]);
- *
  * => [1, 4]
  *
- *
- * @param {Array} arr An array.
- * @param {Array} relArr Another array.
- *
- * @returns {Array} Distinct elements from the first array that are not present in the second array.
+ * @param a - First array
+ * @param b - Second array
  */
-export default function arrDiff(arr: any[], relArr: any[]): any[] {
-  return arrFilter(arr, function (element) {
-    return arrIndex(relArr, element) === -1;
-  });
-}
+export const arrDiff = <Type extends unknown[]>(
+  a: unknown[],
+  b: unknown[],
+): Type => a.filter((element) => b.indexOf(element) === -1) as unknown as Type;

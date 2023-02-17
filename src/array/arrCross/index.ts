@@ -1,1 +1,1 @@
-export { default as arrCross } from './arrCross';
+export * from './arrCross';

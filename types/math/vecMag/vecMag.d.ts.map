@@ -1,1 +1,1 @@
-{"version":3,"file":"vecMag.d.ts","sourceRoot":"","sources":["../../../src/math/vecMag/vecMag.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,UAAU,CAAC;AAGvC,MAAM,CAAC,OAAO,UAAU,MAAM,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM,CAElD"}
+{"version":3,"file":"vecMag.d.ts","sourceRoot":"","sources":["../../../src/math/vecMag/vecMag.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,MAAM,EAAE,MAAM,UAAU,CAAC;AAGvC;;;;;;;;GAQG;AACH,eAAO,MAAM,MAAM,MAAO,MAAM,KAAG,MAAiC,CAAC"}

@@ -1,1 +1,1 @@
-export { default as objFlush } from './objFlush';
+export * from './objFlush';

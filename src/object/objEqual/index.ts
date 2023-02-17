@@ -1,1 +1,1 @@
-export { default as objEqual } from './objEqual';
+export * from './objEqual';

@@ -1,4 +1,4 @@
-import vecMag from './vecMag';
+import { vecMag } from './vecMag';
 
 describe('unit: vecMag', () => {
   it('returns the magnitude of a vector', () => {

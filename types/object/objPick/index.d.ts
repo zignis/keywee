@@ -1,2 +1,2 @@
-export { default as objPick } from './objPick';
+export * from './objPick';
 //# sourceMappingURL=index.d.ts.map

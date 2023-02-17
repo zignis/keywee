@@ -1,4 +1,4 @@
-import objDiff from './objDiff';
+import { objDiff } from './objDiff';
 
 describe('unit: objDiff', () => {
   it('returns an array of similar keys with distinct values', () => {

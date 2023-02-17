@@ -1,2 +1,2 @@
-export { default as vecDot } from './vecDot';
+export * from './vecDot';
 //# sourceMappingURL=index.d.ts.map

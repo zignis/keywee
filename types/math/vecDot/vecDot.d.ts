@@ -1,16 +1,13 @@
 import type { Vector } from '../types';
 /**
- * Returns the dot product of two vectors.
+ * Returns the dot product of two vectors
+ *
  * @example
- *
  * vecDot([1, 2], [3, 4]);
- *
  * => 11
  *
- * @param {Vector} vec A vector.
- * @param {Vector} relVec Another vector.
- *
- * @returns {number} Dot product of both the vectors.
+ * @param a - First vector
+ * @param b - Second vector
  */
-export default function vecDot(vec: Vector, relVec: Vector): number;
+export declare const vecDot: (a: Vector, b: Vector) => number;
 //# sourceMappingURL=vecDot.d.ts.map

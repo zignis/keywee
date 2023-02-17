@@ -1,4 +1,4 @@
-import objPick from './objPick';
+import { objPick } from './objPick';
 
 const sampleObj = {
   dob: { age: 50, date: '1972-04-18T14:50:40.152Z' },

@@ -1,6 +1,6 @@
-import snakeCase from './snakeCase';
+import { snakeCase } from './snakeCase';
 
-const samples = [
+const fixtures = [
   ['flatcase', 'flatcase'],
   ['UPPERFLATCASE', 'upperflatcase'],
   ['kebab-case', 'kebab_case'],
@@ -9,7 +9,7 @@ const samples = [
 ];
 
 describe('unit: snakeCase', () => {
-  test.each(samples)('snake_case: %s -> %s', (fixture, result) =>
+  test.each(fixtures)('snake_case: %s -> %s', (fixture, result) =>
     expect(snakeCase(fixture)).toBe(result),
   );
 });

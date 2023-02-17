@@ -1,9 +1,9 @@
 import { hasKey } from '../hasKey';
 
 /**
- * Deletes a key, an arrays of keys or all keys from an object.
- * @example
+ * Deletes a single key or multiple keys from an object
  *
+ * @example
  * const obj = {
  *   "foo": true,
  *   "bar": false,
@@ -25,31 +25,33 @@ import { hasKey } from '../hasKey';
  * objFlush(obj);
  * => {}
  *
- * @param {Object} obj Source object.
- * @param {any|any[]} [keys] The key or an array of keys to remove.
- *
- * @returns {Boolean} Resultant object.
+ * @param a - An object
+ * @param keys - The key or an array of keys to remove.
  */
-export default function objFlush<
-  Type extends Record<any, any>,
+export const objFlush = <
+  Type extends Record<string | number | symbol, unknown>,
   Key extends keyof Type,
->(obj: Type, keys?: Key | Key[]): Partial<Type> {
+>(
+  a: Type,
+  keys?: Key | Key[],
+): Partial<Type> => {
   if (!keys) {
-    for (var key in obj) {
-      if (hasKey(obj, key)) {
-        delete obj[key];
+    for (const key in a) {
+      if (hasKey(a, key)) {
+        delete a[key];
       }
     }
   } else if (Array.isArray(keys)) {
-    var i = keys.length;
+    let i = keys.length;
+
     while (i--) {
-      if (hasKey(obj, keys[i])) {
-        delete obj[keys[i]];
+      if (hasKey(a, keys[i] as Key)) {
+        delete a[keys[i] as Key];
       }
     }
-  } else if (hasKey(obj, keys)) {
-    delete obj[keys];
+  } else if (hasKey(a, keys)) {
+    delete a[keys];
   }
 
-  return obj;
-}
+  return a;
+};

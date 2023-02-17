@@ -1,2 +1,2 @@
-export { default as objDiff } from './objDiff';
+export * from './objDiff';
 //# sourceMappingURL=index.d.ts.map

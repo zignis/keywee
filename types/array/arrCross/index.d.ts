@@ -1,2 +1,2 @@
-export { default as arrCross } from './arrCross';
+export * from './arrCross';
 //# sourceMappingURL=index.d.ts.map

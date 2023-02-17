@@ -1,16 +1,13 @@
 /**
- * Returns a number whose value is bound to the given range.
- * @example
+ * Clamps a number to bounds
  *
+ * @example
  * clamp(0, 64, 32);
  * => 32
  *
- * @param {number} min The lower boundary of the output range.
- * @param {number} value The base value of the output range.
- * @param {number} max The upper boundary of the output range,
- *
- * @returns {number} A number in the suitable range.
+ * @param min - The lower bound
+ * @param value - Un-clamped value
+ * @param max - The upper bound
  */
-export default function clamp(min: number, value: number, max: number): number {
-  return Math.min(Math.max(value, min), max);
-}
+export const clamp = (min: number, value: number, max: number): number =>
+  Math.min(Math.max(value, min), max);

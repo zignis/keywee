@@ -1,7 +1,7 @@
 /**
- * Check if object has a specific key or an array of keys.
- * @example
+ * Checks if a key or an array of keys exists on an object
  *
+ * @example
  * const obj = {
  *   "foo": true,
  *   "bar": false
@@ -13,10 +13,8 @@
  * hasKey(obj, ['foo', 'bar']);
  * => true
  *
- * @param {Object} obj Source object.
- * @param {any|any[]} keys The key or array of keys to check.
- *
- * @returns {Boolean} Result.
+ * @param a - An object
+ * @param keys - The keys to check
  */
-export default function hasKey<Type extends Record<any, any>, Key extends keyof Type>(obj: Type, keys: Key | Key[]): boolean;
+export declare const hasKey: <Type extends Record<string | number | symbol, unknown>, Key extends keyof Type>(a: Type, keys: Key | Key[]) => boolean;
 //# sourceMappingURL=hasKey.d.ts.map

@@ -1,7 +1,7 @@
 {
   "name": "keywee",
-  "version": "1.7.1",
-  "description": "Performant utility library",
+  "version": "1.8.0",
+  "description": "Yet another utility library",
   "cdn": "dist/index.umd.js",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -20,9 +20,7 @@
     ]
   },
   "devDependencies": {
-    "@types/eslint": "^8.4.5",
-    "@types/jest": "^28.1.6",
-    "@types/prettier": "^2.6.3",
+    "@types/jest": "^29.4.0",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "copyfiles": "^2.4.1",
@@ -60,7 +58,10 @@
   },
   "keywords": [
     "utility",
-    "functional"
+    "functional",
+    "formatters",
+    "formatting",
+    "parsing"
   ],
   "author": {
     "name": "zignis"

@@ -1,23 +1,23 @@
-import hasKey from './hasKey';
+import { hasKey } from './hasKey';
 
 describe('unit: hasKey', () => {
   it('checks for a valid key', () => {
     expect(hasKey({ bar: false, foo: true }, 'foo')).toBeTruthy();
   });
 
-  it('checks for valid keys', () => {
+  it('checks for an array of valid keys', () => {
     expect(hasKey({ bar: false, foo: true }, ['foo', 'bar'])).toBeTruthy();
   });
 
   it('checks for an invalid key', () => {
-    // Suppress TS key warning
-    expect(hasKey({ bar: false } as any, 'foo')).toBeFalsy();
+    // @ts-expect-error Intentional
+    expect(hasKey({ bar: false }, 'foo')).toBeFalsy();
   });
 
   it('checks for invalid keys', () => {
-    // Suppress TS key warning
     expect(
-      hasKey({ bar: false, foo: true } as any, ['foo', 'one']),
+      // @ts-expect-error Intentional
+      hasKey({ bar: false, foo: true }, ['foo', 'one']),
     ).toBeFalsy();
   });
 });

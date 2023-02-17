@@ -1,17 +1,15 @@
 /**
- * Returns an array of similar keys having different values along the two given objects.
- * @example
+ * Returns an array of identical keys with different values across two objects
  *
+ * @example
  * objDiff({ foo: 1, bar: 2 }, { foo: true, bar: 2 });
  * => ['foo']
  *
  * objDiff({ foo: 1, bar: 2 }, { foo: 1, bar: 2 });
  * => false
  *
- * @param {Object} obj First object.
- * @param {Object} relObj Second object.
- *
- * @returns {Array|Boolean} Array of modified keys or false if the two objects are intact.
+ * @param a - First object
+ * @param b - Second object
  */
-export default function objDiff<Type extends Record<any, any>, Key extends keyof Type>(obj: Type, relObj: Type): Key[] | false;
+export declare const objDiff: <Type extends Record<string | number | symbol, any>, Key extends keyof Type>(a: Type, b: Type) => false | Key[];
 //# sourceMappingURL=objDiff.d.ts.map

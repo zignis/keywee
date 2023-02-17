@@ -1,1 +1,1 @@
-export { default as arrEject } from './arrEject';
+export * from './arrEject';

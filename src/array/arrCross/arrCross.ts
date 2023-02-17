@@ -1,22 +1,14 @@
-import { arrFilter } from '../arrFilter';
-import { arrIndex } from '../arrIndex';
-
 /**
- * Returns common elements from the both the arrays.
+ * Returns the common elements from two arrays
+ *
  * @example
- *
  * arrCross([1, 2, 3, 4], [2, 3]);
- *
  * => [2, 3]
  *
- *
- * @param {Array} arr An array.
- * @param {Array} relArr Another array.
- *
- * @returns {Array} Intersecting elements of the arrays.
+ * @param a - First array
+ * @param b - Second array
  */
-export default function arrCross(arr: any[], relArr: any[]): any[] {
-  return arrFilter(arr, function (element) {
-    return arrIndex(relArr, element) !== -1;
-  });
-}
+export const arrCross = <Type extends unknown[]>(
+  a: unknown[],
+  b: unknown[],
+): Type => a.filter((element) => b.indexOf(element) !== -1) as Type;

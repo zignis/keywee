@@ -1,2 +1,2 @@
-export { default as arrDiff } from './arrDiff';
+export * from './arrDiff';
 //# sourceMappingURL=index.d.ts.map

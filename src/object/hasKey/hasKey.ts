@@ -1,7 +1,7 @@
 /**
- * Check if object has a specific key or an array of keys.
- * @example
+ * Checks if a key or an array of keys exists on an object
  *
+ * @example
  * const obj = {
  *   "foo": true,
  *   "bar": false
@@ -13,30 +13,32 @@
  * hasKey(obj, ['foo', 'bar']);
  * => true
  *
- * @param {Object} obj Source object.
- * @param {any|any[]} keys The key or array of keys to check.
- *
- * @returns {Boolean} Result.
+ * @param a - An object
+ * @param keys - The keys to check
  */
-export default function hasKey<
-  Type extends Record<any, any>,
+export const hasKey = <
+  Type extends Record<string | number | symbol, unknown>,
   Key extends keyof Type,
->(obj: Type, keys: Key | Key[]): boolean {
-  var hasKeys = true;
+>(
+  a: Type,
+  keys: Key | Key[],
+): boolean => {
+  let hasKeys = true;
 
   if (Array.isArray(keys)) {
-    var i = keys.length;
+    let i = keys.length;
+
     while (i--) {
-      if (!hasKey(obj, keys[i] as Key)) {
+      if (!hasKey(a, keys[i] as Key)) {
         hasKeys = false;
         break;
       }
     }
   } else {
-    if (!Object.prototype.hasOwnProperty.call(obj, keys)) {
+    if (!Object.prototype.hasOwnProperty.call(a, keys)) {
       hasKeys = false;
     }
   }
 
   return hasKeys;
-}
+};

@@ -1,35 +1,19 @@
-import { arrMap } from '../../array';
-
 /**
- * Converts a string to snake_case.
+ * Converts a string to snake_case
+ *
  * @example
- *
  * snakeCase('camelCase');
- *
  * => 'camel_case'
  *
- * @typedef {Object} Options
- * @property {String} [separator="_"] Separator.
- *
- * @param {String} input Source string.
- * @param {Options} options Snake case options.
- *
- * @returns {String} Snake cased string.
+ * @param a - A string
+ * @param separator - An optional separator to use instead of underscore
  */
-export default function snakeCase(
-  input: string,
-  options?: {
-    separator?: string;
-  },
-): string {
-  var separator = (options || {}).separator;
-  var match = input.match(
+export const snakeCase = (a: string, separator?: string): string => {
+  const matches = a.match(
     /[A-Z]{2,}(?=[A-Z][a-z]+\d*|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/g,
   );
 
-  return match
-    ? arrMap(match, function (chunk) {
-        return chunk.toLowerCase();
-      }).join(separator || '_')
-    : input;
-}
+  return matches
+    ? matches.map((chunk) => chunk.toLowerCase()).join(separator || '_')
+    : a;
+};

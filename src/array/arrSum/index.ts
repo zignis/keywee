@@ -1,1 +1,1 @@
-export { default as arrSum } from './arrSum';
+export * from './arrSum';

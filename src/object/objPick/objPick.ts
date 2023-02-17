@@ -1,57 +1,50 @@
 import { hasKey } from '../hasKey';
 
 /**
- * Pick specific keys from an object.
- * @example
+ * Returns a new object with the specified keys from a source object
  *
+ * @example
  * const obj = {
  *   "one": true,
  *   "two": false,
  *   "foo": "bar"
  * };
  *
- * objPick(obj, ['two', 'foo']);
- *
+ * const newObj = objPick(obj, ['two', 'foo']);
  * =>
  * {
  *   "two": false,
  *   "foo": "bar"
  * }
  *
- *
- * @typedef {Object} Options
- * @property {Boolean} [upsert=false] Create new properties for missing keys.
- * @property {any} [defaultValue] Default value to use for upsert.
- *
- * @param {Object} obj Source object.
- * @param {any[]} keys Array of keys to objPick.
- * @param {Options} options Object objPick options.
- *
- * @returns {Object} Object with specified keys.
+ * @param a - An object
+ * @param keys - An array of keys to pick
+ * @param options - Optional options
+ * @param options.upsert - Whether to create new properties for missing keys
+ * @param options.defaultValue - Default value to use when upsert-ing
  */
-export default function objPick<
-  Type extends Record<any, any>,
+export const objPick = <
+  Type extends Record<string | number | symbol, unknown>,
   Key extends keyof Type,
 >(
-  obj: Type,
+  a: Type,
   keys: Key[] | string[],
   options?: {
-    defaultValue?: any;
+    defaultValue?: unknown;
     upsert?: boolean;
   },
-): Record<typeof keys[any], typeof obj[keyof typeof obj]> {
-  var defaultValue = (options || {}).defaultValue;
-  var upsert = (options || {}).upsert;
-  var newObj: Record<any, any> = {};
+): Record<typeof keys[number], typeof a[keyof typeof a]> => {
+  const { defaultValue, upsert } = options || {};
+  const newObj: Record<string | number | symbol, unknown> = {};
+  let i = keys.length;
 
-  var i = keys.length;
   while (i--) {
-    if (hasKey(obj, keys[i])) {
-      newObj[keys[i]] = obj[keys[i]];
+    if (hasKey(a, keys[i] as Key)) {
+      newObj[keys[i] as Key] = a[keys[i] as Key];
     } else if (upsert) {
-      newObj[keys[i]] = defaultValue || null;
+      newObj[keys[i] as Key] = defaultValue || null;
     }
   }
 
-  return newObj;
-}
+  return newObj as Record<typeof keys[number], typeof a[keyof typeof a]>;
+};

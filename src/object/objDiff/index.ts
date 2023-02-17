@@ -1,1 +1,1 @@
-export { default as objDiff } from './objDiff';
+export * from './objDiff';
