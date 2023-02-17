@@ -1,4 +1,4 @@
-import vecDot from './vecDot';
+import { vecDot } from './vecDot';
 
 describe('unit: vecDot', () => {
   it('returns the dot product of two vectors', () => {

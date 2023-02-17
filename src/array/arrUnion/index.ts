@@ -1,1 +1,1 @@
-export { default as arrUnion } from './arrUnion';
+export * from './arrUnion';

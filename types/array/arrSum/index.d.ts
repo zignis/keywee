@@ -1,2 +1,2 @@
-export { default as arrSum } from './arrSum';
+export * from './arrSum';
 //# sourceMappingURL=index.d.ts.map

@@ -1,1 +1,1 @@
-export { default as arrProd } from './arrProd';
+export * from './arrProd';

@@ -1,1 +1,2 @@
-export * from './toFixed';
+export * from './numAbbr';
+export * from './numOrd';

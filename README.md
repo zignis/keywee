@@ -6,9 +6,6 @@
     <img alt="Package version" src="https://badgen.net/npm/v/keywee" />
   </a>
   <img alt="Package downloads" src="https://badgen.net/npm/dm/keywee" />
-  <a href="https://www.jsdelivr.com/package/npm/keywee" target="_blank">
-    <img alt="JSDelivr Hits" src="https://data.jsdelivr.com/v1/package/npm/keywee/badge" />
-  </a>
   <a href="./LICENSE">
     <img alt="Package license" src="https://badgen.net/npm/license/keywee" />
   </a>
@@ -42,9 +39,13 @@ yarn add keywee
 ```
 
 ## Usage
+
 ```ts
-import * as kw from 'keywee'; // Import eveything (ES6)
-import { objPick } from 'keywee'; // Supports tree-shaking
+import * as kw from 'keywee';
+kw.objPick();
+
+import { objPick } from 'keywee';
+// Supports tree-shaking under relevant bundler
 
 const { arrEject } = require('keywee'); // CommonJS
 ```
@@ -54,14 +55,14 @@ const { arrEject } = require('keywee'); // CommonJS
 This module has a UMD bundle available through JSDelivr and Unpkg CDNs.
 
 ```html
-<!-- For UNPKG use the code below. -->
+<!-- For UNPKG -->
 <script src="https://unpkg.com/keywee"></script>
 
-<!-- For JSDelivr use the code below. -->
+<!-- For JSDelivr -->
 <script src="https://cdn.jsdelivr.net/npm/keywee"></script>
 
 <script>
-  // UMD module is exposed through the "keywee" global variable.
+  // UMD module is exposed through the "keywee" global variable
   console.log(keywee);
 </script>
 ```

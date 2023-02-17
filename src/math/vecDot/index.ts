@@ -1,1 +1,1 @@
-export { default as vecDot } from './vecDot';
+export * from './vecDot';

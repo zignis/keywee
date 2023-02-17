@@ -1,2 +1,2 @@
-export { default as clamp } from './clamp';
+export * from './clamp';
 //# sourceMappingURL=index.d.ts.map

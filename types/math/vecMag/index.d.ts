@@ -1,2 +1,2 @@
-export { default as vecMag } from './vecMag';
+export * from './vecMag';
 //# sourceMappingURL=index.d.ts.map

@@ -6,7 +6,7 @@ import pkg from './package.json';
 
 const banner = `/*!
  * KeyWee v${pkg.version}
- * (c) zignis
+ * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
 `;
@@ -18,8 +18,8 @@ const banner = `/*!
 function createOutputOptions(options) {
   return {
     banner,
-    name: 'keywee',
     exports: 'named',
+    name: 'keywee',
     sourcemap: true,
     ...options,
   };
@@ -60,8 +60,8 @@ const options = {
   plugins: [
     typescript2({
       clean: true,
-      useTsconfigDeclarationDir: true,
       tsconfig: './tsconfig.bundle.json',
+      useTsconfigDeclarationDir: true,
     }),
   ],
 };

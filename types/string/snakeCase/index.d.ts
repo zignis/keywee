@@ -1,2 +1,2 @@
-export { default as snakeCase } from './snakeCase';
+export * from './snakeCase';
 //# sourceMappingURL=index.d.ts.map

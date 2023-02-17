@@ -1,2 +1,2 @@
-export { default as arrEject } from './arrEject';
+export * from './arrEject';
 //# sourceMappingURL=index.d.ts.map

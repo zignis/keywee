@@ -1,28 +1,38 @@
-import { arrIndex } from '../arrIndex';
+type ArrayElement<ArrayType extends unknown[]> = ArrayType[number];
 
-/**
- * Removes elements from an array.
- * @example
- *
- * arrEject([1, 2, 3, 4], 2);
- *
- * => [1, 3, 4]
- *
- *
- * @param {Array} arr An array.
- * @param {any} elem Element to remove from the array.
- *
- * @returns {Array} Array with ejected elements.
- */
-export default function arrEject<Type extends any[]>(
-  arr: Type,
-  elem: typeof arr[number],
-): Type {
-  var index = arrIndex(arr, elem);
+const ejectElement = (element: unknown, array: unknown[]): void => {
+  const index = array.indexOf(element);
 
   if (index > -1) {
-    arr.splice(index, 1);
+    array.splice(index, 1);
+  }
+};
+
+/**
+ * Removes one or more elements from an array
+ *
+ * @example
+ * arrEject([1, 2, 3, 4], 2);
+ * => [1, 3, 4]
+ *
+ * @param a - An array
+ * @param elements - A single element or an array of elements to eject
+ * @param mutate - Whether to mutate the original array
+ */
+export const arrEject = <Type extends unknown[]>(
+  a: unknown[],
+  elements: ArrayElement<Type> | ArrayElement<Type>[],
+  mutate = true,
+): Type => {
+  const operand = mutate ? a : [...a];
+
+  if (Array.isArray(elements)) {
+    for (const element of elements) {
+      ejectElement(element, operand);
+    }
+  } else {
+    ejectElement(elements, operand);
   }
 
-  return arr;
-}
+  return operand as Type;
+};

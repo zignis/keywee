@@ -1,1 +1,1 @@
-export { default as snakeCase } from './snakeCase';
+export * from './snakeCase';

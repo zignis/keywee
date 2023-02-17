@@ -1,2 +1,2 @@
-export { default as objEqual } from './objEqual';
+export * from './objEqual';
 //# sourceMappingURL=index.d.ts.map

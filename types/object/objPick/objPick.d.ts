@@ -1,34 +1,28 @@
 /**
- * Pick specific keys from an object.
- * @example
+ * Returns a new object with the specified keys from a source object
  *
+ * @example
  * const obj = {
  *   "one": true,
  *   "two": false,
  *   "foo": "bar"
  * };
  *
- * objPick(obj, ['two', 'foo']);
- *
+ * const newObj = objPick(obj, ['two', 'foo']);
  * =>
  * {
  *   "two": false,
  *   "foo": "bar"
  * }
  *
- *
- * @typedef {Object} Options
- * @property {Boolean} [upsert=false] Create new properties for missing keys.
- * @property {any} [defaultValue] Default value to use for upsert.
- *
- * @param {Object} obj Source object.
- * @param {any[]} keys Array of keys to objPick.
- * @param {Options} options Object objPick options.
- *
- * @returns {Object} Object with specified keys.
+ * @param a - An object
+ * @param keys - An array of keys to pick
+ * @param options - Optional options
+ * @param options.upsert - Whether to create new properties for missing keys
+ * @param options.defaultValue - Default value to use when upsert-ing
  */
-export default function objPick<Type extends Record<any, any>, Key extends keyof Type>(obj: Type, keys: Key[] | string[], options?: {
-    defaultValue?: any;
+export declare const objPick: <Type extends Record<string | number | symbol, unknown>, Key extends keyof Type>(a: Type, keys: Key[] | string[], options?: {
+    defaultValue?: unknown;
     upsert?: boolean;
-}): Record<typeof keys[any], typeof obj[keyof typeof obj]>;
+} | undefined) => Record<string | Key, Type[keyof Type]>;
 //# sourceMappingURL=objPick.d.ts.map

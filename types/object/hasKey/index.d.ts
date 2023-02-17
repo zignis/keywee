@@ -1,2 +1,2 @@
-export { default as hasKey } from './hasKey';
+export * from './hasKey';
 //# sourceMappingURL=index.d.ts.map

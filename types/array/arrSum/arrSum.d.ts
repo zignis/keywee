@@ -1,12 +1,11 @@
 /**
- * Returns the sum of all the elements in the given numeric array.
- * @example
+ * Returns the sum of elements of an array
  *
+ * @example
  * arrSum([1, 2, 3]);
  * => 6
  *
- * @param {Array} arr A numeric array.
- * @returns {Number} The sum of all the elements of the array.
+ * @param a - A numeric array
  */
-export default function arrSum(arr: number[]): number;
+export declare const arrSum: (a: number[]) => number;
 //# sourceMappingURL=arrSum.d.ts.map

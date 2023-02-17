@@ -1,16 +1,15 @@
+declare type ArrayElement<ArrayType extends unknown[]> = ArrayType[number];
 /**
- * Removes elements from an array.
+ * Removes one or more elements from an array
+ *
  * @example
- *
  * arrEject([1, 2, 3, 4], 2);
- *
  * => [1, 3, 4]
  *
- *
- * @param {Array} arr An array.
- * @param {any} elem Element to remove from the array.
- *
- * @returns {Array} Array with ejected elements.
+ * @param a - An array
+ * @param elements - A single element or an array of elements to eject
+ * @param mutate - Whether to mutate the original array
  */
-export default function arrEject<Type extends any[]>(arr: Type, elem: typeof arr[number]): Type;
+export declare const arrEject: <Type extends unknown[]>(a: unknown[], elements: ArrayElement<Type> | ArrayElement<Type>[], mutate?: boolean) => Type;
+export {};
 //# sourceMappingURL=arrEject.d.ts.map

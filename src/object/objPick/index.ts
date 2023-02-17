@@ -1,1 +1,1 @@
-export { default as objPick } from './objPick';
+export * from './objPick';

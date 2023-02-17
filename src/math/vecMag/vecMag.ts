@@ -1,6 +1,13 @@
 import type { Vector } from '../types';
 import { vecDot } from '../vecDot';
 
-export default function vecMag(vec: Vector): number {
-  return Math.sqrt(vecDot(vec, vec));
-}
+/**
+ * Returns the magnitude of a vector
+ *
+ * @example
+ * vecMag([3, 4]);
+ * => 5
+ *
+ * @param a - A vector
+ */
+export const vecMag = (a: Vector): number => Math.sqrt(vecDot(a, a));
