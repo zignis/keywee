@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.9.0
+ * KeyWee v1.10.0
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -482,6 +482,19 @@
   };
 
   /**
+   * Capitalizes the first letter of a phrase
+   *
+   * @example
+   * strCap("lower case");
+   * => "Lower case"
+   *
+   * @param a - A string
+   */
+  var strCap = function (a) {
+      return a.charAt(0).toUpperCase() + a.slice(1);
+  };
+
+  /**
    * Truncates a long string
    *
    * @example
@@ -515,6 +528,7 @@
   exports.objFlush = objFlush;
   exports.objPick = objPick;
   exports.snakeCase = snakeCase;
+  exports.strCap = strCap;
   exports.strTrunc = strTrunc;
   exports.vecDot = vecDot;
   exports.vecMag = vecMag;

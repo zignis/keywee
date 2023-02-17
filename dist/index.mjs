@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.9.0
+ * KeyWee v1.10.0
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -476,6 +476,19 @@ var snakeCase = function (a, separator) {
 };
 
 /**
+ * Capitalizes the first letter of a phrase
+ *
+ * @example
+ * strCap("lower case");
+ * => "Lower case"
+ *
+ * @param a - A string
+ */
+var strCap = function (a) {
+    return a.charAt(0).toUpperCase() + a.slice(1);
+};
+
+/**
  * Truncates a long string
  *
  * @example
@@ -491,5 +504,5 @@ var strTrunc = function (a, limit, delimiter) {
     return a.length > limit ? "".concat(a.substring(0, limit + 1)).concat(delimiter) : a;
 };
 
-export { arrChunks, arrCross, arrDiff, arrEject, arrProd, arrSum, arrUnion, clamp, defaultAbbreviations, defaultOrdinals, hasKey, numAbbr, numOrd, objDiff, objEqual, objFlush, objPick, snakeCase, strTrunc, vecDot, vecMag };
+export { arrChunks, arrCross, arrDiff, arrEject, arrProd, arrSum, arrUnion, clamp, defaultAbbreviations, defaultOrdinals, hasKey, numAbbr, numOrd, objDiff, objEqual, objFlush, objPick, snakeCase, strCap, strTrunc, vecDot, vecMag };
 //# sourceMappingURL=index.mjs.map
