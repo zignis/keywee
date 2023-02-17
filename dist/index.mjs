@@ -1,8 +1,26 @@
 /*!
- * KeyWee v1.8.1
+ * KeyWee v1.8.2
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
+
+/**
+ * Splits a parent array into smaller chunks
+ *
+ * @example
+ * arrChunks([1, 2, 3, 4], 2);
+ * => [[1, 2], [3, 4]]
+ *
+ * @param a - An array
+ * @param size - Individual chunk size
+ */
+var arrChunks = function (a, size) {
+    var chunks = [];
+    for (var i = 0; i < a.length; i += size) {
+        chunks.push(a.slice(i, i + size));
+    }
+    return chunks;
+};
 
 /**
  * Returns the common elements from two arrays
@@ -457,5 +475,5 @@ var snakeCase = function (a, separator) {
         : a;
 };
 
-export { arrCross, arrDiff, arrEject, arrProd, arrSum, arrUnion, clamp, defaultAbbreviations, defaultOrdinals, hasKey, numAbbr, numOrd, objDiff, objEqual, objFlush, objPick, snakeCase, vecDot, vecMag };
+export { arrChunks, arrCross, arrDiff, arrEject, arrProd, arrSum, arrUnion, clamp, defaultAbbreviations, defaultOrdinals, hasKey, numAbbr, numOrd, objDiff, objEqual, objFlush, objPick, snakeCase, vecDot, vecMag };
 //# sourceMappingURL=index.mjs.map

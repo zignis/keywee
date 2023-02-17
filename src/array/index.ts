@@ -1,3 +1,4 @@
+export * from './arrChunks';
 export * from './arrCross';
 export * from './arrDiff';
 export * from './arrEject';

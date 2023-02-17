@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.8.1
+ * KeyWee v1.8.2
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -7,6 +7,24 @@
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
+
+/**
+ * Splits a parent array into smaller chunks
+ *
+ * @example
+ * arrChunks([1, 2, 3, 4], 2);
+ * => [[1, 2], [3, 4]]
+ *
+ * @param a - An array
+ * @param size - Individual chunk size
+ */
+var arrChunks = function (a, size) {
+    var chunks = [];
+    for (var i = 0; i < a.length; i += size) {
+        chunks.push(a.slice(i, i + size));
+    }
+    return chunks;
+};
 
 /**
  * Returns the common elements from two arrays
@@ -461,6 +479,7 @@ var snakeCase = function (a, separator) {
         : a;
 };
 
+exports.arrChunks = arrChunks;
 exports.arrCross = arrCross;
 exports.arrDiff = arrDiff;
 exports.arrEject = arrEject;

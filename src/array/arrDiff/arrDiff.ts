@@ -11,4 +11,4 @@
 export const arrDiff = <Type extends unknown[]>(
   a: unknown[],
   b: unknown[],
-): Type => a.filter((element) => b.indexOf(element) === -1) as unknown as Type;
+): Type => a.filter((element) => b.indexOf(element) === -1) as Type;
