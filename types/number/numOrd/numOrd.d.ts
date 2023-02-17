@@ -4,7 +4,7 @@ export declare const defaultOrdinals: readonly ["th", "st", "nd", "rd"];
  *
  * @example
  * numOrd(10);
- * => 10th
+ * => "10th"
  *
  * @param a - A number
  * @param suppliedOrdinals - Optional custom ordinals

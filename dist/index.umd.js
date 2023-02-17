@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.8.0
+ * KeyWee v1.8.1
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -216,7 +216,7 @@
    *
    * @example
    * numAbbr(1e3);
-   * => 1k
+   * => "1k"
    *
    * @param a - A number
    * @param suppliedAbbreviations - Optional custom abbreviations
@@ -243,7 +243,7 @@
    *
    * @example
    * numOrd(10);
-   * => 10th
+   * => "10th"
    *
    * @param a - A number
    * @param suppliedOrdinals - Optional custom ordinals
@@ -450,8 +450,8 @@
    * Converts a string to snake_case
    *
    * @example
-   * snakeCase('camelCase');
-   * => 'camel_case'
+   * snakeCase("camelCase");
+   * => "camel_case"
    *
    * @param a - A string
    * @param separator - An optional separator to use instead of underscore

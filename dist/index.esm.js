@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.8.0
+ * KeyWee v1.8.1
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -210,7 +210,7 @@ var defaultAbbreviations = ['', 'k', 'M', 'B', 'T', 'P', 'E'];
  *
  * @example
  * numAbbr(1e3);
- * => 1k
+ * => "1k"
  *
  * @param a - A number
  * @param suppliedAbbreviations - Optional custom abbreviations
@@ -237,7 +237,7 @@ var defaultOrdinals = ['th', 'st', 'nd', 'rd'];
  *
  * @example
  * numOrd(10);
- * => 10th
+ * => "10th"
  *
  * @param a - A number
  * @param suppliedOrdinals - Optional custom ordinals
@@ -444,8 +444,8 @@ var objPick = function (a, keys, options) {
  * Converts a string to snake_case
  *
  * @example
- * snakeCase('camelCase');
- * => 'camel_case'
+ * snakeCase("camelCase");
+ * => "camel_case"
  *
  * @param a - A string
  * @param separator - An optional separator to use instead of underscore

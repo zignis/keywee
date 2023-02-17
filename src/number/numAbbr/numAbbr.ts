@@ -5,7 +5,7 @@ export const defaultAbbreviations = ['', 'k', 'M', 'B', 'T', 'P', 'E'] as const;
  *
  * @example
  * numAbbr(1e3);
- * => 1k
+ * => "1k"
  *
  * @param a - A number
  * @param suppliedAbbreviations - Optional custom abbreviations

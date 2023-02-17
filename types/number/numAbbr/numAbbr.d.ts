@@ -4,7 +4,7 @@ export declare const defaultAbbreviations: readonly ["", "k", "M", "B", "T", "P"
  *
  * @example
  * numAbbr(1e3);
- * => 1k
+ * => "1k"
  *
  * @param a - A number
  * @param suppliedAbbreviations - Optional custom abbreviations

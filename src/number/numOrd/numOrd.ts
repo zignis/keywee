@@ -5,7 +5,7 @@ export const defaultOrdinals = ['th', 'st', 'nd', 'rd'] as const;
  *
  * @example
  * numOrd(10);
- * => 10th
+ * => "10th"
  *
  * @param a - A number
  * @param suppliedOrdinals - Optional custom ordinals
