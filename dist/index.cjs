@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.8.2
+ * KeyWee v1.9.0
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -479,6 +479,22 @@ var snakeCase = function (a, separator) {
         : a;
 };
 
+/**
+ * Truncates a long string
+ *
+ * @example
+ * strTrunc("A very long string", 5);
+ * => "A very..."
+ *
+ * @param a - A long string
+ * @param limit - Limit of characters
+ * @param delimiter - Optional delimiter (terminating suffix)
+ */
+var strTrunc = function (a, limit, delimiter) {
+    if (delimiter === void 0) { delimiter = '...'; }
+    return a.length > limit ? "".concat(a.substring(0, limit + 1)).concat(delimiter) : a;
+};
+
 exports.arrChunks = arrChunks;
 exports.arrCross = arrCross;
 exports.arrDiff = arrDiff;
@@ -497,6 +513,7 @@ exports.objEqual = objEqual;
 exports.objFlush = objFlush;
 exports.objPick = objPick;
 exports.snakeCase = snakeCase;
+exports.strTrunc = strTrunc;
 exports.vecDot = vecDot;
 exports.vecMag = vecMag;
 //# sourceMappingURL=index.cjs.map
