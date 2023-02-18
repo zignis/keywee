@@ -33,7 +33,7 @@ export const objPick = <
     defaultValue?: unknown;
     upsert?: boolean;
   },
-): Record<typeof keys[number], typeof a[keyof typeof a]> => {
+): Record<(typeof keys)[number], (typeof a)[keyof typeof a]> => {
   const { defaultValue, upsert } = options || {};
   const newObj: Record<string | number | symbol, unknown> = {};
   let i = keys.length;
@@ -46,7 +46,7 @@ export const objPick = <
     }
   }
 
-  return newObj as Record<typeof keys[number], typeof a[keyof typeof a]>;
+  return newObj as Record<(typeof keys)[number], (typeof a)[keyof typeof a]>;
 };
 
 export { objPick as objectPick };

@@ -19,5 +19,7 @@ runs:
           ${{ runner.os }}-node-
 
     - name: 'Install dependencies'
-      run: 'yarn ci'
+      uses: 'borales/actions-yarn@v4'
+      with:
+        cmd: ci
       shell: 'bash'

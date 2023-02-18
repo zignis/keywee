@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: 'Release the package on NPM'
+    name: 'Release the package to NPM'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,10 +18,24 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies and build
-        run: yarn install && yarn clean && yarn build
+      - name: Install dependencies
+        uses: 'borales/actions-yarn@v4'
+        with:
+          cmd: install
 
-      - name: Publish package on NPM
-        run: yarn publish
+      - name: Prune old files
+        uses: 'borales/actions-yarn@v4'
+        with:
+          cmd: clean
+
+      - name: Build package
+        uses: 'borales/actions-yarn@v4'
+        with:
+          cmd: build
+
+      - name: Publish package to NPM
+        uses: 'borales/actions-yarn@v4'
+        with:
+          cmd: publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

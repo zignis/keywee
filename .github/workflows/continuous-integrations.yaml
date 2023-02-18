@@ -14,7 +14,9 @@ jobs:
         uses: './.github/actions/setup'
 
       - name: 'Execute the clean script'
-        run: 'yarn clean'
+        uses: 'borales/actions-yarn@v4'
+        with:
+          cmd: clean
 
   lint:
     name: 'Run ESLint and Prettier'
@@ -27,7 +29,9 @@ jobs:
         uses: './.github/actions/setup'
 
       - name: 'Execute the lint script'
-        run: 'yarn lint'
+        uses: 'borales/actions-yarn@v4'
+        with:
+          cmd: lint
 
 
   test:
@@ -41,7 +45,9 @@ jobs:
         uses: './.github/actions/setup'
 
       - name: 'Execute the test script'
-        run: 'yarn test'
+        uses: 'borales/actions-yarn@v4'
+        with:
+          cmd: test
 
   bundle:
     name: 'Bundle package with Rollup.js'
@@ -54,4 +60,6 @@ jobs:
         uses: './.github/actions/setup'
 
       - name: 'Execute the build script'
-        run: 'yarn build'
+        uses: 'borales/actions-yarn@v4'
+        with:
+          cmd: build
