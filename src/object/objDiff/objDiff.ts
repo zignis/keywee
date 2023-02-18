@@ -41,3 +41,10 @@ export const objDiff = <
 
   return modifiedKeys.length ? modifiedKeys : false;
 };
+
+export {
+  objDiff as objDifference,
+  objDiff as objectDiff,
+  // Users might actually confuse objDiff with object diffing
+  objDiff as objectDifference,
+};

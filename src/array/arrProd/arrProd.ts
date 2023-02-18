@@ -9,3 +9,5 @@
  */
 export const arrProd = (a: number[]): number =>
   a.reduce((previousValue, currentValue) => previousValue * currentValue, 1);
+
+export { arrProd as arrayProd, arrProd as arrayProduct };

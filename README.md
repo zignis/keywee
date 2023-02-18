@@ -1,5 +1,5 @@
 <h1 align="center">🥝 KeyWee</h1>
-<p align="center">A performant utility library.</p>
+<p align="center">Yet another performant utility library</p>
 
 <p align="center">
   <a href="https://npmjs.com/package/keywee" target="_blank">
@@ -26,7 +26,14 @@
 
 <p align="center">
   <img alt="Banner" src="./assets/banner.svg" />
+  <strong>
+    <a href="https://zignis.github.io/keywee" target="_blank">Documentation</a>
+  </strong>
 </p>
+
+### But who asked for this, when there are already libraries like lodash and underscore?
+
+I like what lodash (or underscore) has to offer, but this library exports some of the weirdest and uncommon utility methods that you might occasionally need somewhere, and it would not have made sense to propose these methods to a generic utility library like lodash. Adding to it, KeyWee is 100% ES6 compliant and supports tree-shaking out of the box.
 
 ## Installation
 
@@ -38,27 +45,15 @@ npm install keywee
 yarn add keywee
 ```
 
-## Usage
-
-```ts
-import * as kw from 'keywee';
-kw.objPick();
-
-import { objPick } from 'keywee';
-// Supports tree-shaking under relevant bundler
-
-const { arrEject } = require('keywee'); // CommonJS
-```
-
 ### Installation from a CDN
 
-This module has a UMD bundle available through JSDelivr and Unpkg CDNs.
+KeyWee has a UMD bundle available through JSDelivr and Unpkg CDNs.
 
 ```html
-<!-- For UNPKG -->
+<!-- From UNPKG -->
 <script src="https://unpkg.com/keywee"></script>
 
-<!-- For JSDelivr -->
+<!-- From JSDelivr -->
 <script src="https://cdn.jsdelivr.net/npm/keywee"></script>
 
 <script>
@@ -67,10 +62,6 @@ This module has a UMD bundle available through JSDelivr and Unpkg CDNs.
 </script>
 ```
 
-## Docs
-
-Available at https://zignis.github.io/keywee.
-
 ## License
 
-Package released under [MIT License](./LICENSE).
+KeyWee released under the [MIT License](./LICENSE).

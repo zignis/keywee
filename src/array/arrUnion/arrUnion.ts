@@ -12,3 +12,5 @@ export const arrUnion = <Type extends unknown[]>(
   a: unknown[],
   b: unknown[],
 ): Type => [...new Set([...a, ...b])] as Type;
+
+export { arrUnion as arrayUnion, arrUnion as arrayMerge };

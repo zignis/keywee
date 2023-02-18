@@ -11,3 +11,5 @@ import { vecDot } from '../vecDot';
  * @param a - A vector
  */
 export const vecMag = (a: Vector): number => Math.sqrt(vecDot(a, a));
+
+export { vecMag as vectorMag };

@@ -17,3 +17,5 @@ export const snakeCase = (a: string, separator?: string): string => {
     ? matches.map((chunk) => chunk.toLowerCase()).join(separator || '_')
     : a;
 };
+
+export { snakeCase as toSnakeCase };

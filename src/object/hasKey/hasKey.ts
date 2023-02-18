@@ -42,3 +42,5 @@ export const hasKey = <
 
   return hasKeys;
 };
+
+export { hasKey as objHasKey, hasKey as objectHasKey };

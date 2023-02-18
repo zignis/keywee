@@ -48,3 +48,5 @@ export const objPick = <
 
   return newObj as Record<typeof keys[number], typeof a[keyof typeof a]>;
 };
+
+export { objPick as objectPick };

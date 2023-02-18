@@ -14,3 +14,5 @@ export const vecDot = (a: Vector, b: Vector): number =>
   a
     .map((_, index) => (a[index] || 0) * (b[index] || 0))
     .reduce((previousValue, currentValue) => previousValue + currentValue);
+
+export { vecDot as vectorDot };

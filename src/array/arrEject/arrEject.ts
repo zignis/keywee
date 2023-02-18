@@ -36,3 +36,5 @@ export const arrEject = <Type extends unknown[]>(
 
   return operand as Type;
 };
+
+export { arrEject as arrayEject, arrEject as arrayDelete };

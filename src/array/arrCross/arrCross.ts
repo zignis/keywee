@@ -12,3 +12,5 @@ export const arrCross = <Type extends unknown[]>(
   a: unknown[],
   b: unknown[],
 ): Type => a.filter((element) => b.indexOf(element) !== -1) as Type;
+
+export { arrCross as arrayCross, arrCross as arrayIntersect };

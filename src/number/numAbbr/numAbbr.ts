@@ -35,3 +35,5 @@ export const numAbbr = (
 
   return `${!positive ? '-' : ''}${result}${abbreviation}`;
 };
+
+export { numAbbr as numAbbreviate, numAbbr as numberAbbreviate };

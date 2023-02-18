@@ -11,3 +11,9 @@
  */
 export const strTrunc = (a: string, limit: number, delimiter = '...'): string =>
   a.length > limit ? `${a.substring(0, limit + 1)}${delimiter}` : a;
+
+export {
+  strTrunc as strTruncate,
+  strTrunc as stringTrunc,
+  strTrunc as stringTruncate,
+};

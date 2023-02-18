@@ -9,3 +9,9 @@
  */
 export const strCap = (a: string): string =>
   a.charAt(0).toUpperCase() + a.slice(1);
+
+export {
+  strCap as strCapitalize,
+  strCap as stringCap,
+  strCap as stringCapitalize,
+};

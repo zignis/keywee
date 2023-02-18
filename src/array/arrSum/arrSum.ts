@@ -9,3 +9,5 @@
  */
 export const arrSum = (a: number[]): number =>
   a.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+
+export { arrSum as arraySum };

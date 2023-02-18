@@ -40,3 +40,5 @@ export const objEqual = <Type extends Record<string | number | symbol, any>>(
     return a === b;
   }
 };
+
+export { objEqual as objectEqual };

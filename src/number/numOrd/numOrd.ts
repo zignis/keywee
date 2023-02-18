@@ -19,3 +19,5 @@ export const numOrd = (a: number, suppliedOrdinals?: string[]): string => {
     a + (ordinals[(index - 20) % 10] || ordinals[index] || ordinals[0] || '')
   );
 };
+
+export { numOrd as numOrdinal, numOrd as numberOrd, numOrd as numberOrdinal };

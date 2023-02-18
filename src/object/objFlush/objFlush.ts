@@ -55,3 +55,5 @@ export const objFlush = <
 
   return a;
 };
+
+export { objFlush as objectFlush };

@@ -20,3 +20,5 @@ export const arrChunks = <Type extends unknown[]>(
 
   return chunks;
 };
+
+export { arrChunks as arrayToChunks, arrChunks as arrayChunks };
