@@ -8,7 +8,6 @@ node_modules/
 npm-shrinkwrap.json
 
 # Yarn's lockfile, Plug'n'Play, folder and settings.
-yarn.lock
 .pnp.*
 .yarn/
 .yarnrc
