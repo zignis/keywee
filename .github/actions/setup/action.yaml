@@ -17,9 +17,3 @@ runs:
         path: '~/.yarn'
         restore-keys: |
           ${{ runner.os }}-node-
-
-    - name: 'Install dependencies'
-      uses: 'borales/actions-yarn@v4'
-      with:
-        cmd: ci
-      shell: 'bash'
