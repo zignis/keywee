@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.10.1
+ * KeyWee v1.10.3
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */

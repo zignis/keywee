@@ -1,4 +1,4 @@
-declare type ArrayElement<ArrayType extends unknown[]> = ArrayType[number];
+type ArrayElement<ArrayType extends unknown[]> = ArrayType[number];
 /**
  * Removes one or more elements from an array
  *

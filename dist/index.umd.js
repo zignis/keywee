@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.10.1
+ * KeyWee v1.10.3
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -567,8 +567,6 @@
   exports.vecMag = vecMag;
   exports.vectorDot = vecDot;
   exports.vectorMag = vecMag;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
 //# sourceMappingURL=index.umd.js.map

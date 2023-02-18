@@ -10,11 +10,11 @@ jobs:
       - name: 'Checkout the repository'
         uses: 'actions/checkout@v3'
 
-      - name: 'Setup Node.js and npm'
+      - name: 'Setup Node.js and Yarn'
         uses: './.github/actions/setup'
 
       - name: 'Execute the clean script'
-        run: 'npm run clean'
+        run: 'yarn clean'
 
   lint:
     name: 'Run ESLint and Prettier'
@@ -23,11 +23,11 @@ jobs:
       - name: 'Checkout the repository'
         uses: 'actions/checkout@v3'
 
-      - name: 'Setup Node.js and npm'
+      - name: 'Setup Node.js and Yarn'
         uses: './.github/actions/setup'
 
       - name: 'Execute the lint script'
-        run: 'npm run lint'
+        run: 'yarn lint'
 
 
   test:
@@ -37,11 +37,11 @@ jobs:
       - name: 'Checkout the repository'
         uses: 'actions/checkout@v3'
 
-      - name: 'Setup Node.js and npm'
+      - name: 'Setup Node.js and Yarn'
         uses: './.github/actions/setup'
 
       - name: 'Execute the test script'
-        run: 'npm run test'
+        run: 'yarn test'
 
   bundle:
     name: 'Bundle package with Rollup.js'
@@ -50,8 +50,8 @@ jobs:
       - name: 'Checkout the repository'
         uses: 'actions/checkout@v3'
 
-      - name: 'Setup Node.js and npm'
+      - name: 'Setup Node.js and Yarn'
         uses: './.github/actions/setup'
 
       - name: 'Execute the build script'
-        run: 'npm run build'
+        run: 'yarn build'
