@@ -26,10 +26,13 @@
 
 <p align="center">
   <img alt="Banner" src="./assets/banner.svg" />
-  <strong>
-    <a href="https://zignis.github.io/keywee" target="_blank">Documentation</a>
-  </strong>
 </p>
+
+<h3 align="center">
+  <a href="https://zignis.github.io/keywee" target="_blank">Documentation</a>
+</h3>
+  
+<br />
 
 ### But who asked for this, when there are already libraries like lodash and underscore?
 
