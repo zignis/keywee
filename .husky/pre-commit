@@ -9,6 +9,5 @@ yarn doc
 yarn build
 
 git add -A
-git commit --amend -C HEAD --no-verify
 
 exit
