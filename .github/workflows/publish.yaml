@@ -36,6 +36,6 @@ jobs:
       - name: Publish package to NPM
         uses: 'borales/actions-yarn@v4'
         with:
-          cmd: publish
+          cmd: publish --@zignis:registry=https://registry.npmjs.org/
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
