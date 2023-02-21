@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.11.0
+ * KeyWee v1.11.1
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -625,6 +625,7 @@ exports.objectFlush = objFlush;
 exports.objectHasKey = hasKey;
 exports.objectPick = objPick;
 exports.paramsToObj = paramsToObj;
+exports.paramsToObject = paramsToObj;
 exports.parseNum = parseNum;
 exports.parseNumber = parseNum;
 exports.snakeCase = snakeCase;

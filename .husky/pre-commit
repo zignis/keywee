@@ -8,6 +8,7 @@ yarn test
 yarn doc
 yarn build
 
-echo
-touch .commit
+git add -A
+git commit --amend -C HEAD --no-verify
+
 exit

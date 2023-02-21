@@ -30,4 +30,5 @@ export declare const paramsToObj: <Type = any>(params: URLSearchParams, options?
     parseNulls?: boolean;
     parseNumbers?: boolean;
 }) => Type;
+export { paramsToObj as paramsToObject };
 //# sourceMappingURL=paramsToObj.d.ts.map
