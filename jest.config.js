@@ -5,8 +5,10 @@
  * @type {import('@jest/types').Config.InitialOptions}
  */
 const options = {
-  preset: 'ts-jest',
   resolver: 'ts-jest-resolver',
+  transform: {
+    '^.+\\.(t|j)s$': '@swc/jest',
+  },
 };
 
 module.exports = options;
