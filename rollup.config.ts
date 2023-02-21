@@ -1,5 +1,4 @@
-// @ts-check
-
+import type { OutputOptions, RollupOptions } from 'rollup';
 import { terser } from 'rollup-plugin-terser';
 import typescript2 from 'rollup-plugin-typescript2';
 import pkg from './package.json' assert { type: 'json' };
@@ -11,24 +10,15 @@ const banner = `/*!
  */
 `;
 
-/**
- * @param {import('rollup').OutputOptions} options
- * @returns {import('rollup').OutputOptions}
- */
-function createOutputOptions(options) {
-  return {
-    banner,
-    exports: 'named',
-    name: 'keywee',
-    sourcemap: true,
-    ...options,
-  };
-}
+const createOutputOptions = (options: OutputOptions): OutputOptions => ({
+  banner,
+  exports: 'named',
+  name: 'keywee',
+  sourcemap: true,
+  ...options,
+});
 
-/**
- * @type {import('rollup').RollupOptions}
- */
-const options = {
+const options: RollupOptions = {
   input: './src/index.ts',
   output: [
     createOutputOptions({

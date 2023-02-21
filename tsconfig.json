@@ -4,6 +4,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "moduleResolution": "Node",
+    "module": "ESNext",
     "resolveJsonModule": true,
     "alwaysStrict": true,
     "downlevelIteration": true,
@@ -23,5 +24,5 @@
     "skipLibCheck": true,
     "types": ["jest", "node"]
   },
-  "include": ["src"]
+  "include": ["src", "rollup.config.ts"]
 }
