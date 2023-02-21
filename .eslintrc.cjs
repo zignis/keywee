@@ -1,12 +1,10 @@
 // @ts-check
 /* eslint-env node */
 
-'use strict';
-
 /**
  * @type {import('eslint').Linter.Config}
  */
-var options = {
+const options = {
   extends: [
     'eslint:recommended',
     'plugin:sort/recommended',

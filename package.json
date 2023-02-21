@@ -1,6 +1,7 @@
 {
   "name": "keywee",
-  "version": "1.11.1",
+  "version": "1.11.2",
+  "type": "module",
   "description": "Yet another utility library",
   "cdn": "dist/index.umd.js",
   "main": "dist/index.js",
