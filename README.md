@@ -10,7 +10,7 @@
     <img alt="Package license" src="https://badgen.net/npm/license/keywee" />
   </a>
   <a href="https://github.com/HexM7/keywee/actions/workflows/continuous-integrations.yaml">
-    <img alt="Continuous Integrations" src="https://github.com/HexM7/keywee/actions/workflows/continuous-integrations.yaml/badge.svg?branch=master" />
+    <img alt="Continuous Integrations" src="https://github.com/zignis/keywee/actions/workflows/continuous-integrations.yaml/badge.svg?branch=master" />
   </a>
   <a href="https://bundlephobia.com/package/keywee@latest" target="_blank">
     <img alt="Package tree-shaking" src="https://badgen.net/bundlephobia/tree-shaking/keywee" />
