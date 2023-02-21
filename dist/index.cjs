@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.10.3
+ * KeyWee v1.10.4
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -270,6 +270,28 @@ var numOrd = function (a, suppliedOrdinals) {
 };
 
 /**
+ * Converts a string to an integer or a floating value
+ *
+ * @example
+ * parseNum('64');
+ * => 64
+ *
+ * parseNum('2.14');
+ * => 2.14
+ *
+ * @param value - The string to parse
+ * @param returnNull - Whether to return null if the input cannot be parsed to a number
+ */
+var parseNum = function (value, returnNull) {
+    return Number.isNaN(Number(value)) || Number.isNaN(Number.parseInt('' + value))
+        ? returnNull
+            ? null
+            : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                value
+        : +('' + value);
+};
+
+/**
  * Checks if a key or an array of keys exists on an object
  *
  * @example
@@ -506,6 +528,59 @@ var strTrunc = function (a, limit, delimiter) {
     return a.length > limit ? "".concat(a.substring(0, limit + 1)).concat(delimiter) : a;
 };
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * Converts url parameters to object
+ *
+ * @example
+ * paramsToObj(new URLSearchParams("?foo=bar&bar=doe&foo=5&john=null"));
+ * => {
+ *   foo: ["bar", "5"],
+ *   bar: "doe",
+ *   john: "null"
+ * }
+ *
+ * paramsToObj(
+ *   new URLSearchParams('?foo=5&bar=null', {
+ *     parseNulls: true,
+ *     parseNumbers: true,
+ *   }),
+ * );
+ * => {
+ *   foo: 5,
+ *   bar: null
+ * }
+ *
+ * @param params - Search params
+ * @param options - Optional options
+ * @param options.parseNumbers - Whether to parse numeric string parameter values
+ * @param options.parseNulls - Whether to parse null string parameter values
+ */
+var paramsToObj = function (params, options) {
+    var iterator = params.entries();
+    var object = {};
+    for (var itr = iterator.next(); !itr.done; itr = iterator.next()) {
+        var _a = __read(itr.value, 2), key = _a[0], rawValue = _a[1];
+        var value = (options === null || options === void 0 ? void 0 : options.parseNulls) && rawValue === 'null'
+            ? null
+            : (options === null || options === void 0 ? void 0 : options.parseNumbers)
+                ? parseNum(rawValue)
+                : rawValue;
+        if (object[key]) {
+            if (Array.isArray(object[key])) {
+                object[key].push(value);
+            }
+            else {
+                object[key] = [object[key], value];
+            }
+        }
+        else {
+            object[key] = value;
+        }
+    }
+    return object;
+};
+
 exports.arrChunks = arrChunks;
 exports.arrCross = arrCross;
 exports.arrDiff = arrDiff;
@@ -549,6 +624,9 @@ exports.objectEqual = objEqual;
 exports.objectFlush = objFlush;
 exports.objectHasKey = hasKey;
 exports.objectPick = objPick;
+exports.paramsToObj = paramsToObj;
+exports.parseNum = parseNum;
+exports.parseNumber = parseNum;
 exports.snakeCase = snakeCase;
 exports.strCap = strCap;
 exports.strCapitalize = strCap;
@@ -558,6 +636,7 @@ exports.stringCap = strCap;
 exports.stringCapitalize = strCap;
 exports.stringTrunc = strTrunc;
 exports.stringTruncate = strTrunc;
+exports.toNumber = parseNum;
 exports.toSnakeCase = snakeCase;
 exports.vecDot = vecDot;
 exports.vecMag = vecMag;

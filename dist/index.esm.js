@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.10.3
+ * KeyWee v1.10.4
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -268,6 +268,28 @@ var numOrd = function (a, suppliedOrdinals) {
 };
 
 /**
+ * Converts a string to an integer or a floating value
+ *
+ * @example
+ * parseNum('64');
+ * => 64
+ *
+ * parseNum('2.14');
+ * => 2.14
+ *
+ * @param value - The string to parse
+ * @param returnNull - Whether to return null if the input cannot be parsed to a number
+ */
+var parseNum = function (value, returnNull) {
+    return Number.isNaN(Number(value)) || Number.isNaN(Number.parseInt('' + value))
+        ? returnNull
+            ? null
+            : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                value
+        : +('' + value);
+};
+
+/**
  * Checks if a key or an array of keys exists on an object
  *
  * @example
@@ -504,5 +526,58 @@ var strTrunc = function (a, limit, delimiter) {
     return a.length > limit ? "".concat(a.substring(0, limit + 1)).concat(delimiter) : a;
 };
 
-export { arrChunks, arrCross, arrDiff, arrEject, arrProd, arrSum, arrUnion, arrChunks as arrayChunks, arrCross as arrayCross, arrEject as arrayDelete, arrDiff as arrayDiff, arrDiff as arrayDifference, arrEject as arrayEject, arrCross as arrayIntersect, arrUnion as arrayMerge, arrProd as arrayProd, arrProd as arrayProduct, arrSum as arraySum, arrChunks as arrayToChunks, arrUnion as arrayUnion, clamp, defaultAbbreviations, defaultOrdinals, hasKey, numAbbr, numAbbr as numAbbreviate, numOrd, numOrd as numOrdinal, numAbbr as numberAbbreviate, numOrd as numberOrd, numOrd as numberOrdinal, objDiff, objDiff as objDifference, objEqual, objFlush, hasKey as objHasKey, objPick, objDiff as objectDiff, objDiff as objectDifference, objEqual as objectEqual, objFlush as objectFlush, hasKey as objectHasKey, objPick as objectPick, snakeCase, strCap, strCap as strCapitalize, strTrunc, strTrunc as strTruncate, strCap as stringCap, strCap as stringCapitalize, strTrunc as stringTrunc, strTrunc as stringTruncate, snakeCase as toSnakeCase, vecDot, vecMag, vecDot as vectorDot, vecMag as vectorMag };
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/**
+ * Converts url parameters to object
+ *
+ * @example
+ * paramsToObj(new URLSearchParams("?foo=bar&bar=doe&foo=5&john=null"));
+ * => {
+ *   foo: ["bar", "5"],
+ *   bar: "doe",
+ *   john: "null"
+ * }
+ *
+ * paramsToObj(
+ *   new URLSearchParams('?foo=5&bar=null', {
+ *     parseNulls: true,
+ *     parseNumbers: true,
+ *   }),
+ * );
+ * => {
+ *   foo: 5,
+ *   bar: null
+ * }
+ *
+ * @param params - Search params
+ * @param options - Optional options
+ * @param options.parseNumbers - Whether to parse numeric string parameter values
+ * @param options.parseNulls - Whether to parse null string parameter values
+ */
+var paramsToObj = function (params, options) {
+    var iterator = params.entries();
+    var object = {};
+    for (var itr = iterator.next(); !itr.done; itr = iterator.next()) {
+        var _a = __read(itr.value, 2), key = _a[0], rawValue = _a[1];
+        var value = (options === null || options === void 0 ? void 0 : options.parseNulls) && rawValue === 'null'
+            ? null
+            : (options === null || options === void 0 ? void 0 : options.parseNumbers)
+                ? parseNum(rawValue)
+                : rawValue;
+        if (object[key]) {
+            if (Array.isArray(object[key])) {
+                object[key].push(value);
+            }
+            else {
+                object[key] = [object[key], value];
+            }
+        }
+        else {
+            object[key] = value;
+        }
+    }
+    return object;
+};
+
+export { arrChunks, arrCross, arrDiff, arrEject, arrProd, arrSum, arrUnion, arrChunks as arrayChunks, arrCross as arrayCross, arrEject as arrayDelete, arrDiff as arrayDiff, arrDiff as arrayDifference, arrEject as arrayEject, arrCross as arrayIntersect, arrUnion as arrayMerge, arrProd as arrayProd, arrProd as arrayProduct, arrSum as arraySum, arrChunks as arrayToChunks, arrUnion as arrayUnion, clamp, defaultAbbreviations, defaultOrdinals, hasKey, numAbbr, numAbbr as numAbbreviate, numOrd, numOrd as numOrdinal, numAbbr as numberAbbreviate, numOrd as numberOrd, numOrd as numberOrdinal, objDiff, objDiff as objDifference, objEqual, objFlush, hasKey as objHasKey, objPick, objDiff as objectDiff, objDiff as objectDifference, objEqual as objectEqual, objFlush as objectFlush, hasKey as objectHasKey, objPick as objectPick, paramsToObj, parseNum, parseNum as parseNumber, snakeCase, strCap, strCap as strCapitalize, strTrunc, strTrunc as strTruncate, strCap as stringCap, strCap as stringCapitalize, strTrunc as stringTrunc, strTrunc as stringTruncate, parseNum as toNumber, snakeCase as toSnakeCase, vecDot, vecMag, vecDot as vectorDot, vecMag as vectorMag };
 //# sourceMappingURL=index.esm.js.map
