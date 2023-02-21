@@ -67,4 +67,4 @@ KeyWee has a UMD bundle available through JSDelivr and Unpkg CDNs.
 
 ## License
 
-KeyWee released under the [MIT License](./LICENSE).
+KeyWee is released under the [MIT License](./LICENSE).
