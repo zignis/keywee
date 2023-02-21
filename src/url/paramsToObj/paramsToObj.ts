@@ -62,3 +62,5 @@ export const paramsToObj = <Type = any>(
 
   return object as Type;
 };
+
+export { paramsToObj as paramsToObject };
