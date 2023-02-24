@@ -9,7 +9,8 @@
   <a href="./LICENSE">
     <img alt="Package license" src="https://badgen.net/npm/license/keywee" />
   </a>
-  <a href="https://github.com/HexM7/keywee/actions/workflows/continuous-integrations.yaml">
+  <a href="https://github.com/zignis
+  /keywee/actions/workflows/continuous-integrations.yaml">
     <img alt="Continuous Integrations" src="https://github.com/zignis/keywee/actions/workflows/continuous-integrations.yaml/badge.svg?branch=master" />
   </a>
   <a href="https://bundlephobia.com/package/keywee@latest" target="_blank">
