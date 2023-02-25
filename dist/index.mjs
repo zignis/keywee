@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.11.2
+ * KeyWee v1.12.0
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -193,6 +193,20 @@ var arrUnion = function (a, b) { return __spreadArray([], __read(new Set(__sprea
  */
 var clamp = function (min, value, max) {
     return Math.min(Math.max(value, min), max);
+};
+
+/**
+ * Returns the greatest common divisor of two numbers
+ *
+ * @example
+ * gcd(24, 12);
+ * => 12
+ *
+ * @param a - First number
+ * @param b - Second number
+ */
+var gcd = function (a, b) {
+    return b === 0 ? a : gcd(b, a % b);
 };
 
 /**
@@ -579,5 +593,5 @@ var paramsToObj = function (params, options) {
     return object;
 };
 
-export { arrChunks, arrCross, arrDiff, arrEject, arrProd, arrSum, arrUnion, arrChunks as arrayChunks, arrCross as arrayCross, arrEject as arrayDelete, arrDiff as arrayDiff, arrDiff as arrayDifference, arrEject as arrayEject, arrCross as arrayIntersect, arrUnion as arrayMerge, arrProd as arrayProd, arrProd as arrayProduct, arrSum as arraySum, arrChunks as arrayToChunks, arrUnion as arrayUnion, clamp, defaultAbbreviations, defaultOrdinals, hasKey, numAbbr, numAbbr as numAbbreviate, numOrd, numOrd as numOrdinal, numAbbr as numberAbbreviate, numOrd as numberOrd, numOrd as numberOrdinal, objDiff, objDiff as objDifference, objEqual, objFlush, hasKey as objHasKey, objPick, objDiff as objectDiff, objDiff as objectDifference, objEqual as objectEqual, objFlush as objectFlush, hasKey as objectHasKey, objPick as objectPick, paramsToObj, paramsToObj as paramsToObject, parseNum, parseNum as parseNumber, snakeCase, strCap, strCap as strCapitalize, strTrunc, strTrunc as strTruncate, strCap as stringCap, strCap as stringCapitalize, strTrunc as stringTrunc, strTrunc as stringTruncate, parseNum as toNumber, snakeCase as toSnakeCase, vecDot, vecMag, vecDot as vectorDot, vecMag as vectorMag };
+export { arrChunks, arrCross, arrDiff, arrEject, arrProd, arrSum, arrUnion, arrChunks as arrayChunks, arrCross as arrayCross, arrEject as arrayDelete, arrDiff as arrayDiff, arrDiff as arrayDifference, arrEject as arrayEject, arrCross as arrayIntersect, arrUnion as arrayMerge, arrProd as arrayProd, arrProd as arrayProduct, arrSum as arraySum, arrChunks as arrayToChunks, arrUnion as arrayUnion, clamp, defaultAbbreviations, defaultOrdinals, gcd, hasKey, numAbbr, numAbbr as numAbbreviate, numOrd, numOrd as numOrdinal, numAbbr as numberAbbreviate, numOrd as numberOrd, numOrd as numberOrdinal, objDiff, objDiff as objDifference, objEqual, objFlush, hasKey as objHasKey, objPick, objDiff as objectDiff, objDiff as objectDifference, objEqual as objectEqual, objFlush as objectFlush, hasKey as objectHasKey, objPick as objectPick, paramsToObj, paramsToObj as paramsToObject, parseNum, parseNum as parseNumber, snakeCase, strCap, strCap as strCapitalize, strTrunc, strTrunc as strTruncate, strCap as stringCap, strCap as stringCapitalize, strTrunc as stringTrunc, strTrunc as stringTruncate, parseNum as toNumber, snakeCase as toSnakeCase, vecDot, vecMag, vecDot as vectorDot, vecMag as vectorMag };
 //# sourceMappingURL=index.mjs.map

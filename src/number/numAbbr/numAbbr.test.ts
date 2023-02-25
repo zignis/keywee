@@ -30,14 +30,16 @@ describe('unit: numAbbr', () => {
   test.each(fixtures(defaultAbbreviations as unknown as string[]))(
     'abbreviates %d to %s',
     (num, expected) => {
-      expect(numAbbr(num)).toBe(expected);
+      expect(numAbbr(num)).toEqual(expected);
     },
   );
 
   test.each(fixtures(['', 'a', 'b', 'c', 'd', 'e', 'f']))(
     'abbreviates %d to %s',
     (num, expected) => {
-      expect(numAbbr(num, ['', 'a', 'b', 'c', 'd', 'e', 'f'])).toBe(expected);
+      expect(numAbbr(num, ['', 'a', 'b', 'c', 'd', 'e', 'f'])).toEqual(
+        expected,
+      );
     },
   );
 });

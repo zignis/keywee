@@ -20,14 +20,14 @@ describe('unit: numOrd', () => {
   test.each(fixtures(defaultOrdinals as unknown as string[]))(
     'suffixes an appropriate ordinal (%s) to %d',
     (num, expected) => {
-      expect(numOrd(num)).toBe(expected);
+      expect(numOrd(num)).toEqual(expected);
     },
   );
 
   test.each(fixtures(['a', 'b', 'c', 'd']))(
     'suffixes a custom ordinal (%s) to %d',
     (num, expected) => {
-      expect(numOrd(num, ['a', 'b', 'c', 'd'])).toBe(expected);
+      expect(numOrd(num, ['a', 'b', 'c', 'd'])).toEqual(expected);
     },
   );
 });

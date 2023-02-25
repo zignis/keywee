@@ -1,5 +1,5 @@
 /*!
- * KeyWee v1.11.2
+ * KeyWee v1.12.0
  * (c) zignis (https://github.com/zignis/keywee)
  * Released under the MIT License.
  */
@@ -195,6 +195,20 @@ var arrUnion = function (a, b) { return __spreadArray([], __read(new Set(__sprea
  */
 var clamp = function (min, value, max) {
     return Math.min(Math.max(value, min), max);
+};
+
+/**
+ * Returns the greatest common divisor of two numbers
+ *
+ * @example
+ * gcd(24, 12);
+ * => 12
+ *
+ * @param a - First number
+ * @param b - Second number
+ */
+var gcd = function (a, b) {
+    return b === 0 ? a : gcd(b, a % b);
 };
 
 /**
@@ -604,6 +618,7 @@ exports.arrayUnion = arrUnion;
 exports.clamp = clamp;
 exports.defaultAbbreviations = defaultAbbreviations;
 exports.defaultOrdinals = defaultOrdinals;
+exports.gcd = gcd;
 exports.hasKey = hasKey;
 exports.numAbbr = numAbbr;
 exports.numAbbreviate = numAbbr;

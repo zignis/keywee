@@ -10,6 +10,6 @@ const fixtures = [
 
 describe('unit: snakeCase', () => {
   test.each(fixtures)('snake_case: %s -> %s', (fixture, result) =>
-    expect(snakeCase(fixture)).toBe(result),
+    expect(snakeCase(fixture)).toEqual(result),
   );
 });
