@@ -9,8 +9,7 @@
   <a href="./LICENSE">
     <img alt="Package license" src="https://badgen.net/npm/license/keywee" />
   </a>
-  <a href="https://github.com/zignis
-  /keywee/actions/workflows/continuous-integrations.yaml">
+  <a href="https://github.com/zignis/keywee/actions/workflows/continuous-integrations.yaml">
     <img alt="Continuous Integrations" src="https://github.com/zignis/keywee/actions/workflows/continuous-integrations.yaml/badge.svg?branch=master" />
   </a>
   <a href="https://bundlephobia.com/package/keywee@latest" target="_blank">
@@ -37,7 +36,7 @@
 
 ### But who asked for this, when there are already libraries like lodash and underscore?
 
-I like what lodash (or underscore) has to offer, but this library exports some of the weirdest and uncommon utility methods that you might occasionally need somewhere, and it would not have made sense to propose these methods to a generic utility library like lodash. Adding to it, KeyWee is 100% ES6 compliant and supports tree-shaking out of the box.
+I am a fan of what Lodash (or underscore) offers, however this library exports some of the most bizarre and unusual utility methods that you might need from time to time, and it would have made no sense to introduce these methods to a generic utility library like Lodash. Further, KeyWee is 100% ES6 compliant and supports tree-shaking out of the box.
 
 ## Installation
 
